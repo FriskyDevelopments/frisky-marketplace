@@ -63,6 +63,13 @@
       "description": "连接 Cloudflare 官方 MCP 服务，管理 Workers、Pages、KV、D1、R2、DNS、Zero Trust、Analytics 等全套 Cloudflare 资源，OAuth 授权",
       "category": "DEVELOPER_TOOLS",
       "owner": "friskypup"
+    },
+    {
+      "name": "n8n-connector",
+      "path": "./n8n-connector",
+      "description": "连接你自托管的 n8n 实例（n8n.friskydev.com）内置 MCP 服务，搜索和触发工作流、创建/编辑工作流与数据表、管理执行记录",
+      "category": "PRODUCTIVITY",
+      "owner": "friskypup"
     }
   ]
 }

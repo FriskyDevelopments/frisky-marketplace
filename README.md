@@ -35,6 +35,8 @@ every push here is a release.
 
 | 09 | **cloudflare-connector** | Cloudflare official MCP — Workers, Pages, KV, D1, R2, DNS, Zero Trust, Analytics |
 
+| 10 | **n8n-connector** | Your self-hosted n8n instance MCP — workflows, executions, data tables |
+
 ## Install
 
 1. Open the Kimi app → **Directory** → **Organization** tab

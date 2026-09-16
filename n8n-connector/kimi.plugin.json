@@ -1,0 +1,29 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "n8n-connector",
+  "version": "0.1.0",
+  "description": "连接你自托管的 n8n 实例（n8n.friskydev.com）内置 MCP 服务，搜索和触发工作流、创建/编辑工作流与数据表、管理执行记录",
+  "keywords": [
+    "n8n",
+    "workflow",
+    "automation",
+    "integrations"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "当用户提到 n8n、工作流（workflow）、自动化流程、触发某个 n8n 任务、查看执行记录时使用本插件。走 n8n 实例级 OAuth 授权：首次调用会打开 n8n 授权页，登录 n8n.friskydev.com 并批准即可。注意：要在 MCP 中执行的工作流需在 n8n 里标记为 Available in MCP。",
+  "interface": {
+    "displayName": "n8n Connector",
+    "shortDescription": "在 Kimi 里使用 n8n Connector",
+    "longDescription": "连接你自托管的 n8n 实例（n8n.friskydev.com）内置 MCP 服务，搜索和触发工作流、创建/编辑工作流与数据表、管理执行记录",
+    "developerName": "Local developer",
+    "websiteURL": "",
+    "iconUrl": "",
+    "category": "PRODUCTIVITY"
+  },
+  "mcpServers": {
+    "n8n-connector": {
+      "url": "https://n8n.friskydev.com/mcp-server/http"
+    }
+  }
+}
