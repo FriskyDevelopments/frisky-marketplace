@@ -1,0 +1,51 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "framer",
+  "version": "0.1.0",
+  "description": "Diseña, edita y publica sitios web en Framer desde Kimi: lee páginas y contexto del proyecto, gestiona colecciones CMS, aplica cambios, previsualiza y publica/despliega con el MCP de Framer (framer-mcp-server vía npx).",
+  "keywords": [
+    "framer",
+    "web design",
+    "website",
+    "cms",
+    "publish",
+    "deploy",
+    "landing page",
+    "design tool"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "",
+  "interface": {
+    "displayName": "Framer",
+    "shortDescription": "Diseña, edita y publica sitios Framer desde Kimi",
+    "longDescription": "Diseña, edita y publica sitios web en Framer desde Kimi: lee páginas y contexto del proyecto, gestiona colecciones CMS, aplica cambios, previsualiza y publica/despliega con el MCP de Framer (framer-mcp-server vía npx).",
+    "developerName": "Local developer",
+    "websiteURL": "",
+    "iconUrl": "",
+    "category": "PRODUCTIVITY",
+    "hostKind": "local",
+    "platforms": [
+      "macos",
+      "linux",
+      "windows"
+    ]
+  },
+  "skills": "./skills/",
+  "mcpServers": {
+    "framer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "framer-mcp-server"
+      ],
+      "env": {
+        "FRAMER_PROJECT_URL": "",
+        "FRAMER_API_KEY": ""
+      }
+    }
+  },
+  "sessionStart": {
+    "skill": "framer"
+  }
+}

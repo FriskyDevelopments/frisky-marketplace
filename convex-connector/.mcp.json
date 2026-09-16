@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "convex-connector": {
+      "command": "npx",
+      "args": ["-y", "convex@1.45.0", "mcp", "start"]
+    }
+  }
+}

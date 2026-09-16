@@ -1,0 +1,31 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "friskydev-mcp",
+  "version": "0.1.0+local.20260909-122457",
+  "description": "Boutique AI operator infrastructure — 15 specialists, unified MongoDB memory, deployable MCP surface for ChatGPT, Codex & AI workers. Cyberpunk clarity without dashboard clutter.",
+  "keywords": [
+    "mcp",
+    "frisky",
+    "ai",
+    "agents",
+    "specialists",
+    "memory"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "",
+  "interface": {
+    "displayName": "Frisky Dev MCP",
+    "shortDescription": "Use Frisky Dev MCP in Kimi — 15 specialist operators with shared memory",
+    "longDescription": "Boutique AI systems with a memory spine — 15 specialist operators, shared MongoDB memory, and a deployable MCP surface for ChatGPT, Codex, and AI workers.",
+    "developerName": "Local developer",
+    "websiteURL": "https://mcp.friskydev.com",
+    "iconUrl": "https://mcp.friskydev.com/icons/frisky-dev-mcp-neon-chatgpt-icon.png",
+    "category": "PRODUCTIVITY"
+  },
+  "mcpServers": {
+    "friskydev-mcp": {
+      "url": "https://mcp.friskydev.com/mcp"
+    }
+  }
+}

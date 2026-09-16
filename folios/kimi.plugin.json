@@ -1,0 +1,28 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "folios",
+  "version": "0.1.0+local.20260909-071654",
+  "description": "Folios — espacio de trabajo inteligente de evidencia / intelligent proof workspace. ES: Folios reúne tu material de trabajo, lo conecta con tu intención y lo convierte en folios estructurados y compartibles. Organiza tus flujos de trabajo como Playbooks —investigación de mercado, pitch a inversionistas, QBR, video con IA, traducción de PDF y más— con experiencia bilingüe: español (México) como idioma principal y English (US) como segundo idioma, para equipos que trabajan entre México y EE. UU. Diseño Editorial Workbench con ambición de nivel Awwwards: tipografía expresiva, motion con propósito, composición editorial asimétrica. EN: Folios collects your working material, connects it to your intent, and turns it into structured, shareable folios. Organize your workflows as Playbooks — market research, investor pitch, QBR, AI video, PDF translation, and more — with a bilingual experience: Spanish (Mexico) as the primary language and English (US) as a user-controlled second locale for teams working across Mexico and the United States. Editorial Workbench design with Awwwards-level ambition: expressive typography, purposeful motion, asymmetric editorial composition.",
+  "keywords": [
+    "folios",
+    "SaaS",
+    "bilingual",
+    "playbooks",
+    "waitlist",
+    "es-MX",
+    "proof workspace"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "",
+  "interface": {
+    "displayName": "Folios",
+    "shortDescription": "在 Kimi 里使用 Folios",
+    "longDescription": "Folios 双语 SaaS 产品工作台：把需求变成西语优先、墨西哥–美国双市场的 Folios 智能证据工作区（营销叙事、等候名单、互动 demo、Playbooks 目录与详情页、客户证据区），Editorial Workbench 视觉体系，严禁伪造客户证据。",
+    "developerName": "Local developer",
+    "websiteURL": "",
+    "iconUrl": "",
+    "category": "PRODUCTIVITY"
+  },
+  "skills": "./skills/"
+}

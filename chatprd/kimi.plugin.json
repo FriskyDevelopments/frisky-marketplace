@@ -1,0 +1,31 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "chatprd",
+  "version": "0.1.0",
+  "description": "ChatPRD MCP connector — push PRDs, feature specs and FriskyClaw ops digests into ChatPRD via OAuth (no API key)",
+  "keywords": [
+    "chatprd",
+    "prd",
+    "product-requirements",
+    "mcp",
+    "friskyclaw",
+    "digests"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "",
+  "interface": {
+    "displayName": "ChatPRD",
+    "shortDescription": "Push PRDs and FriskyClaw digests into ChatPRD",
+    "longDescription": "Official ChatPRD MCP connector (OAuth, no API key). Use it to push PRDs, feature specs, and the twice-daily FriskyClaw ops rollup into ChatPRD, and to read back PRD status.",
+    "developerName": "Local developer",
+    "websiteURL": "https://app.chatprd.ai",
+    "iconUrl": "https://app.chatprd.ai/favicon.ico",
+    "category": "PRODUCTIVITY"
+  },
+  "mcpServers": {
+    "chatprd": {
+      "url": "https://app.chatprd.ai/mcp"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "render",
+  "version": "0.1.0",
+  "description": "Manage Render cloud infrastructure with Render's official MCP server: list workspaces and services, create web services, static sites, cron jobs, Postgres databases and Key Value stores, inspect deploys, read logs and metrics, update env vars, and run read-only SQL on Render Postgres.",
+  "keywords": [
+    "render",
+    "cloud",
+    "deploy",
+    "hosting",
+    "postgres",
+    "cron",
+    "devops"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "Render's official hosted MCP server (https://mcp.render.com/mcp). Before first use, the user must connect it with a Render API key: Dashboard → Account Settings → API Keys → create a key, then connect the MCP server with Authorization: Bearer <key>. After connecting, first select the active Render workspace, then list services. Create/update operations are supported (create services and datastores, replace env vars), but the server does not delete services, trigger manual deploys, or change scaling — say so if asked.",
+  "interface": {
+    "displayName": "Render",
+    "shortDescription": "在 Kimi 里管理 Render 云服务",
+    "longDescription": "Manage Render cloud infrastructure with Render's official MCP server: list workspaces and services, create web services, static sites, cron jobs, Postgres databases and Key Value stores, inspect deploys, read logs and metrics, update env vars, and run read-only SQL on Render Postgres.",
+    "developerName": "Render (official MCP) — plugin packaged locally",
+    "websiteURL": "https://render.com",
+    "iconUrl": "icon.svg",
+    "category": "DEVTOOLS",
+    "hostKind": "hosted",
+    "platforms": [
+      "macos",
+      "linux",
+      "windows"
+    ]
+  },
+  "skills": "./skills/",
+  "mcpServers": {
+    "render": {
+      "url": "https://mcp.render.com/mcp"
+    }
+  }
+}

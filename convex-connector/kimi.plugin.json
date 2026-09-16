@@ -1,0 +1,45 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "convex-connector",
+  "version": "0.1.0+local.20260909-071540",
+  "description": "连接你的 Convex 项目：通过官方 convex CLI 内置的 MCP server（convex mcp start，Beta）查看部署状态、浏览数据表、查询数据、运行函数、查看日志与性能洞察、管理环境变量。",
+  "keywords": [
+    "convex",
+    "backend",
+    "database",
+    "mcp",
+    "deployment",
+    "env vars",
+    "logs"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "",
+  "interface": {
+    "displayName": "Convex Connector",
+    "shortDescription": "在 Kimi 里直连你的 Convex 项目",
+    "longDescription": "连接你的 Convex 项目：通过官方 convex CLI 内置的 MCP server（convex mcp start，Beta）查看部署状态、浏览数据表、查询数据、运行函数、查看日志与性能洞察、管理环境变量。",
+    "developerName": "Local developer",
+    "websiteURL": "https://www.convex.dev/",
+    "iconUrl": "",
+    "category": "DEVELOPER_TOOLS",
+    "hostKind": "local",
+    "platforms": [
+      "macos",
+      "linux",
+      "windows"
+    ]
+  },
+  "skills": "./skills/",
+  "mcpServers": {
+    "convex-connector": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "convex@1.45.0",
+        "mcp",
+        "start"
+      ]
+    }
+  }
+}
