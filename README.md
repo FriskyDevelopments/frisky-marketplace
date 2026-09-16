@@ -33,6 +33,8 @@ every push here is a release.
 | 07 | **chatprd** | ChatPRD — product docs on demand |
 | 08 | **folios** | Folios — evidence workspaces, playbooks |
 
+| 09 | **cloudflare-connector** | Cloudflare official MCP — Workers, Pages, KV, D1, R2, DNS, Zero Trust, Analytics |
+
 ## Install
 
 1. Open the Kimi app → **Directory** → **Organization** tab

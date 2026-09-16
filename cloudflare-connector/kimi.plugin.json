@@ -1,0 +1,34 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "cloudflare-connector",
+  "version": "0.1.0",
+  "description": "连接 Cloudflare 官方 MCP 服务，管理 Workers、Pages、KV、D1、R2、DNS、Zero Trust、Analytics 等全套 Cloudflare 资源，OAuth 授权",
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "pages",
+    "kv",
+    "d1",
+    "r2",
+    "dns",
+    "cdn",
+    "zero-trust"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "当用户提到 Cloudflare 任何产品（Workers、Pages、KV、D1、R2、DNS 记录、CDN、Zero Trust、隧道、Analytics、Stream 等）的管理或排查时使用本插件。首次使用会跳转 Cloudflare OAuth 授权页，用 Cloudflare 账号登录并选择允许的账户即可。",
+  "interface": {
+    "displayName": "Cloudflare Connector",
+    "shortDescription": "在 Kimi 里使用 Cloudflare Connector",
+    "longDescription": "连接 Cloudflare 官方 MCP 服务，管理 Workers、Pages、KV、D1、R2、DNS、Zero Trust、Analytics 等全套 Cloudflare 资源，OAuth 授权",
+    "developerName": "Local developer",
+    "websiteURL": "",
+    "iconUrl": "https://www.cloudflare.com/logo.svg",
+    "category": "DEVELOPER_TOOLS"
+  },
+  "mcpServers": {
+    "cloudflare-connector": {
+      "url": "https://mcp.cloudflare.com/mcp"
+    }
+  }
+}

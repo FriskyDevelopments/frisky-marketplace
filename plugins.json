@@ -56,6 +56,13 @@
       "description": "连接 Sentry 官方 MCP 服务，查询错误、issue、事件、release、trace、session replay 等监控数据",
       "category": "DEVELOPER_TOOLS",
       "owner": "friskypup"
+    },
+    {
+      "name": "cloudflare-connector",
+      "path": "./cloudflare-connector",
+      "description": "连接 Cloudflare 官方 MCP 服务，管理 Workers、Pages、KV、D1、R2、DNS、Zero Trust、Analytics 等全套 Cloudflare 资源，OAuth 授权",
+      "category": "DEVELOPER_TOOLS",
+      "owner": "friskypup"
     }
   ]
 }
