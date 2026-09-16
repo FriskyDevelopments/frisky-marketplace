@@ -1,20 +1,73 @@
-# Frisky Marketplace
-Personal Kimi plugin marketplace (org tab). Index: `plugins.json` (native Kimi format).
-## Plugins
+<div align="center">
 
-| Plugin | Category | Description |
-|---|---|---|
-| [chatprd](./chatprd) | PRODUCTIVITY | ChatPRD MCP connector — push PRDs, feature specs and FriskyClaw ops digests into ChatPRD via OAuth (no API key) |
-| [composio-connector](./composio-connector) | PRODUCTIVITY | 连接 Composio 托管 MCP 服务，通过一个端点调用 1000+ 应用的托管工具（Gmail、Slack、Notion、Linear、HubSpot 等），Composio 统一管理 OAuth 授权 |
-| [convex-connector](./convex-connector) | DEVELOPER_TOOLS | 连接你的 Convex 项目：通过官方 convex CLI 内置的 MCP server（convex mcp start，Beta）查看部署状态、浏览数据表、查询数据、运行函数、查看日志与性能洞察、管理环境变量。 |
-| [folios](./folios) | PRODUCTIVITY | Folios — espacio de trabajo inteligente de evidencia / intelligent proof workspace. ES: Folios reúne tu material de trabajo, lo conecta con tu intención y lo convierte en folios estructurados y compartibles. Organiza tus flujos de trabajo como Playbooks —investigación de mercado, pitch a inversionistas, QBR, video con IA, traducción de PDF y más— con experiencia bilingüe: español (México) como idioma principal y English (US) como segundo idioma, para equipos que trabajan entre México y EE. UU. Diseño Editorial Workbench con ambición de nivel Awwwards: tipografía expresiva, motion con propósito, composición editorial asimétrica. EN: Folios collects your working material, connects it to your intent, and turns it into structured, shareable folios. Organize your workflows as Playbooks — market research, investor pitch, QBR, AI video, PDF translation, and more — with a bilingual experience: Spanish (Mexico) as the primary language and English (US) as a user-controlled second locale for teams working across Mexico and the United States. Editorial Workbench design with Awwwards-level ambition: expressive typography, purposeful motion, asymmetric editorial composition. |
-| [framer](./framer) | PRODUCTIVITY | Diseña, edita y publica sitios web en Framer desde Kimi: lee páginas y contexto del proyecto, gestiona colecciones CMS, aplica cambios, previsualiza y publica/despliega con el MCP de Framer (framer-mcp-server vía npx). |
-| [friskydev-mcp](./friskydev-mcp) | PRODUCTIVITY | Boutique AI operator infrastructure — 15 specialists, unified MongoDB memory, deployable MCP surface for ChatGPT, Codex & AI workers. Cyberpunk clarity without dashboard clutter. |
-| [render](./render) | DEVTOOLS | Manage Render cloud infrastructure with Render's official MCP server: list workspaces and services, create web services, static sites, cron jobs, Postgres databases and Key Value stores, inspect deploys, read logs and metrics, update env vars, and run read-only SQL on Render Postgres. |
-| [sentry-connector](./sentry-connector) | DEVELOPER_TOOLS | 连接 Sentry 官方 MCP 服务，查询错误、issue、事件、release、trace、session replay 等监控数据 |
+<pre>
+███████╗██████╗ ██╗███████╗██╗  ██╗██╗   ██╗
+██╔════╝██╔══██╗██║██╔════╝██║ ██╔╝╚██╗ ██╔╝
+█████╗  ██████╔╝██║███████╗█████╔╝  ╚████╔╝
+██╔══╝  ██╔══██╗██║╚════██║██╔═██╗   ╚██╔╝
+██║     ██║  ██║██║███████║██║  ██╗   ██║
+╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝
+        M A R K E T P L A C E
+</pre>
 
-## Usage
+<span style="color:#00e5ff">eight connectors · one org tab · zero ceremony</span>
 
-Paste this repo's URL into the Kimi app Directory → Organization tab
-(git repositories or hosted marketplace.json URLs). The app re-fetches periodically.
-Drop a new plugin folder + `plugins.json` entry and push to publish.
+</div>
+
+---
+
+Personal plugin marketplace for the **Kimi** app. Add this repo in the
+Directory's **Organization** tab — the app re-fetches it periodically, so
+every push here is a release.
+
+## The Roster
+
+| # | Plugin | What it wires into your chats |
+|---|--------|-------------------------------|
+| 01 | **sentry-connector** | Sentry's official MCP — errors, issues, traces, replays, release health |
+| 02 | **composio-connector** | Composio's hosted tool router — 1000+ apps behind one OAuth |
+| 03 | **convex-connector** | Convex backend — projects, deployments, data |
+| 04 | **friskydev-mcp** | FriskyDev gateway — 15 specialist operators + shared memory |
+| 05 | **render** | Render.com — services, deploys, logs, cron jobs |
+| 06 | **framer** | Framer — pages, CMS collections, publish |
+| 07 | **chatprd** | ChatPRD — product docs on demand |
+| 08 | **folios** | Folios — evidence workspaces, playbooks |
+
+## Install
+
+1. Open the Kimi app → **Directory** → **Organization** tab
+2. Paste this repo's URL:
+   `https://github.com/FriskyDevelopments/frisky-marketplace`
+3. Install plugins from the org marketplace as they appear
+
+## Publish a New Plugin
+
+```bash
+# 1. drop the plugin folder at the repo root
+cp -R ~/path/to/my-plugin ./my-plugin
+
+# 2. add one entry to plugins.json
+#    { "name": "my-plugin", "path": "./my-plugin", ... }
+
+# 3. push — the app picks it up on its next fetch
+git add -A && git commit -m "add my-plugin" && git push
+```
+
+`plugins.json` is the native Kimi index — entries point at in-repo folders
+(`path`) or external repos (`url`), with optional `description`, `category`,
+and `owner` metadata.
+
+## Layout
+
+```
+frisky-marketplace/
+├── plugins.json        ← the index (name: "frisky")
+├── README.md
+└── <plugin>/           ← one folder per plugin, each with kimi.plugin.json
+```
+
+---
+
+<div align="center">
+<sub>frisky developments · wired for <span style="color:#ff2ea6">friskypup</span></sub>
+</div>
