@@ -1,0 +1,30 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "sentry-connector",
+  "version": "0.1.0",
+  "description": "连接 Sentry 官方 MCP 服务，查询错误、issue、事件、release、trace、session replay 等监控数据",
+  "keywords": [
+    "sentry",
+    "error-monitoring",
+    "issue",
+    "debugging",
+    "apm"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "当用户提到 Sentry、错误监控、线上报错、issue 排查、异常追踪、release 质量、trace 分析时使用本插件调用 Sentry 工具取数。",
+  "interface": {
+    "displayName": "Sentry Connector",
+    "shortDescription": "在 Kimi 里使用 Sentry Connector",
+    "longDescription": "连接 Sentry 官方 MCP 服务，查询错误、issue、事件、release、trace、session replay 等监控数据",
+    "developerName": "Local developer",
+    "websiteURL": "",
+    "iconUrl": "https://raw.githubusercontent.com/getsentry/sentry/master/static/images/logo-sentry.svg",
+    "category": "DEVELOPER_TOOLS"
+  },
+  "mcpServers": {
+    "sentry-connector": {
+      "url": "https://mcp.sentry.dev/mcp"
+    }
+  }
+}

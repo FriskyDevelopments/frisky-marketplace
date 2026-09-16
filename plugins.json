@@ -1,0 +1,19 @@
+{
+  "name": "frisky",
+  "plugins": [
+    {
+      "name": "sentry-connector",
+      "path": "./sentry-connector",
+      "description": "连接 Sentry 官方 MCP 服务，查询错误、issue、事件、release、trace、session replay 等监控数据",
+      "category": "DEVELOPER_TOOLS",
+      "owner": "friskypup"
+    },
+    {
+      "name": "composio-connector",
+      "path": "./composio-connector",
+      "description": "连接 Composio 托管 MCP 服务，通过一个端点调用 1000+ 应用的托管工具（Gmail、Slack、Notion、Linear、HubSpot 等），Composio 统一管理 OAuth 授权",
+      "category": "PRODUCTIVITY",
+      "owner": "friskypup"
+    }
+  ]
+}

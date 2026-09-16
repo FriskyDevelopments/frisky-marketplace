@@ -1,0 +1,30 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "composio-connector",
+  "version": "0.1.0",
+  "description": "连接 Composio 托管 MCP 服务，通过一个端点调用 1000+ 应用的托管工具（Gmail、Slack、Notion、Linear、HubSpot 等），Composio 统一管理 OAuth 授权",
+  "keywords": [
+    "composio",
+    "integrations",
+    "tool-router",
+    "automation",
+    "saaS-tools"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "当用户提到 Composio、连接第三方应用（Gmail/Slack/Notion/Linear/HubSpot 等）、跨应用自动化、工具路由时使用本插件。首次使用会跳转 Composio OAuth 授权；具体应用的账号授权在 connect.composio.dev 的 Connect Apps 中完成。",
+  "interface": {
+    "displayName": "Composio Connector",
+    "shortDescription": "在 Kimi 里使用 Composio Connector",
+    "longDescription": "连接 Composio 托管 MCP 服务，通过一个端点调用 1000+ 应用的托管工具（Gmail、Slack、Notion、Linear、HubSpot 等），Composio 统一管理 OAuth 授权",
+    "developerName": "Local developer",
+    "websiteURL": "",
+    "iconUrl": "https://raw.githubusercontent.com/ComposioHQ/composio/next/docs/public/Composio%20Logo.svg",
+    "category": "PRODUCTIVITY"
+  },
+  "mcpServers": {
+    "composio-connector": {
+      "url": "https://connect.composio.dev/mcp"
+    }
+  }
+}
