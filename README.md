@@ -2,12 +2,12 @@
 
 ![Frisky Marketplace](./assets/banner.svg)
 
-![plugins](https://img.shields.io/badge/plugins-10-00e5ff?style=flat-square)
+![plugins](https://img.shields.io/badge/plugins-11-00e5ff?style=flat-square)
 ![index](https://img.shields.io/badge/index-plugins.json-ff2ea6?style=flat-square)
 ![app](https://img.shields.io/badge/for-Kimi_app-8fa1b8?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-8fa1b8?style=flat-square)
 
-**ten connectors · one org tab · zero ceremony**
+**eleven connectors · one org tab · zero ceremony**
 
 Personal plugin marketplace for the **Kimi** app. Add this repo in the
 Directory's **Organization** tab — the app re-fetches it periodically, so
@@ -31,6 +31,7 @@ Directory's **Organization** tab — the app re-fetches it periodically, so
 | 08 | <img src="./folios/icon.svg" width="24" alt="folios"> | [**folios**](./folios) | Folios — evidence workspaces, playbooks | `PRODUCTIVITY` |
 | 09 | <img src="./cloudflare-connector/icon.svg" width="24" alt="cloudflare"> | [**cloudflare-connector**](./cloudflare-connector) | Cloudflare official MCP — Workers, Pages, KV, D1, R2, DNS, Zero Trust, Analytics | `DEVELOPER_TOOLS` |
 | 10 | <img src="./n8n-connector/icon.png" width="24" alt="n8n"> | [**n8n-connector**](./n8n-connector) | Your self-hosted n8n instance MCP — workflows, executions, data tables | `PRODUCTIVITY` |
+| 11 | <img src="./perplexity/icon.svg" width="24" alt="perplexity"> | [**perplexity**](./perplexity) | Perplexity official MCP — real-time web search, reasoning, conversational AI | `PRODUCTIVITY` |
 
 ## Install
 

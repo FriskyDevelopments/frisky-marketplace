@@ -1,0 +1,31 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "perplexity",
+  "version": "0.1.0",
+  "description": "Perplexity official hosted MCP — real-time web search, conversational AI and reasoning inside your sessions via OAuth sign-in or API key",
+  "keywords": [
+    "perplexity",
+    "search",
+    "web-search",
+    "reasoning",
+    "mcp",
+    "research"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "",
+  "interface": {
+    "displayName": "Perplexity",
+    "shortDescription": "Search and reason with Perplexity inside sessions",
+    "longDescription": "Official Perplexity hosted MCP server (Streamable HTTP). Sign in with your Perplexity account (OAuth, pick the API org to bill) or connect with an API key. Exposes real-time web search and reasoning tools to the session.",
+    "developerName": "Local developer",
+    "websiteURL": "https://www.perplexity.ai",
+    "iconUrl": "https://www.perplexity.ai/favicon.ico",
+    "category": "PRODUCTIVITY"
+  },
+  "mcpServers": {
+    "perplexity": {
+      "url": "https://api.perplexity.ai/mcp"
+    }
+  }
+}
