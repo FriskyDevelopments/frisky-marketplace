@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="Frisky Marketplace banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A0C11"/>
+      <stop offset="0.55" stop-color="#0D1420"/>
+      <stop offset="1" stop-color="#120A18"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00E5FF"/>
+      <stop offset="1" stop-color="#FF2EA6"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#1B2740" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="420" fill="url(#bg)"/>
+  <rect width="1200" height="420" fill="url(#grid)" opacity="0.55"/>
+  <rect x="0" y="0" width="1200" height="6" fill="url(#accent)"/>
+  <rect x="0" y="414" width="1200" height="6" fill="url(#accent)" opacity="0.65"/>
+  <circle cx="1020" cy="90" r="130" fill="#00E5FF" opacity="0.07"/>
+  <circle cx="170" cy="340" r="150" fill="#FF2EA6" opacity="0.08"/>
+  <text x="600" y="188" text-anchor="middle" font-family="Menlo, Monaco, Consolas, monospace" font-size="112" font-weight="bold" letter-spacing="14" fill="#F2F5F9">FRISKY</text>
+  <text x="600" y="252" text-anchor="middle" font-family="Menlo, Monaco, Consolas, monospace" font-size="40" letter-spacing="30" fill="url(#accent)">MARKETPLACE</text>
+  <text x="600" y="312" text-anchor="middle" font-family="Menlo, Monaco, Consolas, monospace" font-size="24" letter-spacing="6" fill="#8FA1B8">ten connectors · one org tab · zero ceremony</text>
+  <g font-family="Menlo, Monaco, Consolas, monospace" font-size="20" fill="#8FA1B8">
+    <text x="600" y="362" text-anchor="middle" letter-spacing="2">built for the Kimi app · Organization tab</text>
+  </g>
+</svg>
