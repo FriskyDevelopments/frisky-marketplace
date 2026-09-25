@@ -77,6 +77,13 @@
       "description": "Perplexity official hosted MCP — real-time web search, conversational AI and reasoning inside your sessions via OAuth sign-in or API key",
       "category": "PRODUCTIVITY",
       "owner": "friskypup"
+    },
+    {
+      "name": "magic-patterns",
+      "path": "./magic-patterns",
+      "description": "Magic Patterns official MCP — prototype ideas seeded from local UI, generate design directions, port local UI into hosted designs, adapt designs back into production code",
+      "category": "PRODUCTIVITY",
+      "owner": "friskypup"
     }
   ]
 }

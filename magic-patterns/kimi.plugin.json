@@ -1,0 +1,32 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "magic-patterns",
+  "version": "0.1.0",
+  "description": "Magic Patterns official MCP — prototype ideas seeded from local UI, generate design directions, port local UI into hosted designs, adapt designs back into production code",
+  "keywords": [
+    "magic-patterns",
+    "design",
+    "prototype",
+    "ui",
+    "frontend",
+    "mcp",
+    "react"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "",
+  "interface": {
+    "displayName": "Magic Patterns",
+    "shortDescription": "Prototype and iterate UI with Magic Patterns",
+    "longDescription": "Official Magic Patterns MCP server (Streamable HTTP at mcp.magicpatterns.com). Prototype ideas seeded from local UI, generate bold design directions, port local UI into hosted designs, and adapt Magic Patterns designs back into production code. Sign in via OAuth, or connect with a Magic Patterns API key.",
+    "developerName": "Local developer",
+    "websiteURL": "https://www.magicpatterns.com",
+    "iconUrl": "https://www.magicpatterns.com/favicon.ico",
+    "category": "PRODUCTIVITY"
+  },
+  "mcpServers": {
+    "magic-patterns": {
+      "url": "https://mcp.magicpatterns.com/mcp"
+    }
+  }
+}
