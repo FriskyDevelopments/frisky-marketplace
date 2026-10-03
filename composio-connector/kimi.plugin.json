@@ -12,7 +12,7 @@
   ],
   "author": "Local developer",
   "license": "MIT",
-  "skillInstructions": "当用户提到 Composio、连接第三方应用（Gmail/Slack/Notion/Linear/HubSpot 等）、跨应用自动化、工具路由时使用本插件。首次使用会跳转 Composio OAuth 授权；具体应用的账号授权在 connect.composio.dev 的 Connect Apps 中完成。",
+  "skillInstructions": "当用户提到 Composio、连接第三方应用（Gmail/Slack/Notion/Linear/HubSpot 等）、跨应用自动化、工具路由时使用本插件。首次使用会跳转 Composio OAuth 授权；具体应用的账号授权在 connect.composio.dev 的 Connect Apps 中完成。这条连接只批准 openid、profile、email 和 offline_access。email 是身份声明，不是邮箱读取权限。不要把各个应用自己的 scope 加到这次授权上。",
   "interface": {
     "displayName": "Composio Connector",
     "shortDescription": "在 Kimi 里使用 Composio Connector",

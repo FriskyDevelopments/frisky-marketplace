@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "auditedOn": "2026-10-03",
+  "plugins": {
+    "chatprd": {
+      "auth": "oauth",
+      "serverUrl": "https://app.chatprd.ai/mcp",
+      "requestedScopes": ["email", "profile"],
+      "protectedResourceScopes": ["email", "profile"],
+      "allowOfflineAccess": false,
+      "allowWriteScopes": false,
+      "liveProbe": "required",
+      "reason": "The MCP protected resource publishes only email and profile. The Clerk authorization server also advertises openid, offline_access, public_metadata, private_metadata, and user:org:read. Those are not requested."
+    },
+    "cloudflare-connector": {
+      "auth": "oauth",
+      "serverUrl": "https://mcp.cloudflare.com/mcp",
+      "requestedScopes": ["account:read", "user:read"],
+      "protectedResourceScopes": ["account:read", "user:read"],
+      "allowOfflineAccess": false,
+      "allowWriteScopes": false,
+      "liveProbe": "required",
+      "reason": "The protected resource and the 401 challenge advertise only account:read and user:read. The authorization server catalog also lists write and admin scopes such as workers-scripts.write and dns.write. Those are not requested."
+    },
+    "composio-connector": {
+      "auth": "oauth",
+      "serverUrl": "https://connect.composio.dev/mcp",
+      "requestedScopes": ["email", "offline_access", "openid", "profile"],
+      "protectedResourceScopes": [],
+      "authorizationServerScopesReviewed": ["email", "offline_access", "openid", "profile"],
+      "allowOfflineAccess": true,
+      "allowWriteScopes": false,
+      "liveProbe": "required",
+      "reason": "The protected resource publishes no scopes. The authorization server's whole list is OIDC identity plus offline_access for the refresh_token grant. email is the identity claim, not a mailbox scope. Per-app grants stay in Composio Connect Apps and must not be added here."
+    },
+    "convex-connector": {
+      "auth": "local-cli",
+      "requestedScopes": [],
+      "allowOfflineAccess": false,
+      "allowWriteScopes": false,
+      "reason": "The plugin starts the local Convex CLI MCP server. It does not send an OAuth scope parameter; Convex login stays in the CLI outside this manifest."
+    },
+    "folios": {
+      "auth": "none",
+      "requestedScopes": [],
+      "allowOfflineAccess": false,
+      "allowWriteScopes": false,
+      "reason": "Folios ships skills only and does not declare an MCP server or an OAuth client."
+    },
+    "framer": {
+      "auth": "api-key",
+      "requestedScopes": [],
+      "allowOfflineAccess": false,
+      "allowWriteScopes": false,
+      "reason": "Framer connects with FRAMER_API_KEY on the local framer-mcp-server process. No OAuth scopes are requested."
+    },
+    "friskydev-mcp": {
+      "auth": "oauth",
+      "serverUrl": "https://mcp.friskydev.com/mcp",
+      "requestedScopes": ["frisky.mcp"],
+      "protectedResourceScopes": ["frisky.mcp"],
+      "allowOfflineAccess": false,
+      "allowWriteScopes": false,
+      "liveProbe": "required",
+      "reason": "The gateway publishes a single scope, frisky.mcp. The authorization server does not offer a refresh grant, so offline_access is not requested."
+    },
+    "magic-patterns": {
+      "auth": "oauth",
+      "serverUrl": "https://mcp.magicpatterns.com/mcp",
+      "requestedScopes": ["email", "offline_access", "openid", "profile"],
+      "protectedResourceScopes": ["email", "offline_access", "openid", "profile"],
+      "allowOfflineAccess": true,
+      "allowWriteScopes": false,
+      "liveProbe": "required",
+      "reason": "The protected resource publishes only these four OIDC scopes, including offline_access. There is no narrower product scope to select, and no further scope is requested."
+    },
+    "n8n-connector": {
+      "auth": "oauth",
+      "serverUrl": "https://n8n.friskydev.com/mcp-server/http",
+      "requestedScopes": [],
+      "protectedResourceScopes": [],
+      "emptyScopeRequestReviewed": true,
+      "allowOfflineAccess": false,
+      "allowWriteScopes": false,
+      "liveProbe": "skip",
+      "reason": "Instance OAuth on n8n.friskydev.com. Live metadata was unreachable on 2026-10-03 (Cloudflare tunnel error 1033), so the client must not add scopes until a reviewed protected-resource list exists."
+    },
+    "perplexity": {
+      "auth": "oauth",
+      "serverUrl": "https://api.perplexity.ai/mcp",
+      "requestedScopes": ["perplexity_api"],
+      "protectedResourceScopes": ["perplexity_api"],
+      "allowOfflineAccess": false,
+      "allowWriteScopes": false,
+      "liveProbe": "required",
+      "reason": "The protected resource publishes only perplexity_api. The authorization server also advertises offline_access, which is not requested."
+    },
+    "render": {
+      "auth": "api-key",
+      "serverUrl": "https://mcp.render.com/mcp",
+      "requestedScopes": [],
+      "protectedResourceScopes": [],
+      "allowOfflineAccess": false,
+      "allowWriteScopes": false,
+      "liveProbe": "required",
+      "reason": "Connect with a dedicated Render API key. The hosted server can challenge OAuth but publishes no scopes_supported. This plugin does not attach scopes. Re-audit if the protected resource starts advertising any."
+    },
+    "sentry-connector": {
+      "auth": "oauth",
+      "serverUrl": "https://mcp.sentry.dev/mcp",
+      "requestedScopes": ["org:read"],
+      "protectedResourceScopes": ["alerts:write", "event:write", "org:read", "project:write", "team:write"],
+      "allowOfflineAccess": false,
+      "allowWriteScopes": false,
+      "liveProbe": "required",
+      "reason": "The plugin only reads issues, events, releases, traces, and replays. Of the scopes the protected resource publishes, only org:read is requested. project:write, team:write, event:write, and alerts:write are declined."
+    }
+  }
+}

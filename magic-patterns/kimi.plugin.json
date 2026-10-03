@@ -14,7 +14,7 @@
   ],
   "author": "Local developer",
   "license": "MIT",
-  "skillInstructions": "",
+  "skillInstructions": "OAuth for this connector approves only openid, email, profile, and offline_access. Do not approve any other scope.",
   "interface": {
     "displayName": "Magic Patterns",
     "shortDescription": "Prototype and iterate UI with Magic Patterns",
