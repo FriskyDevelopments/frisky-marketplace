@@ -41,6 +41,9 @@ Directory's **Organization** tab — the app re-fetches it periodically, so
    `https://github.com/FriskyDevelopments/frisky-marketplace`
 3. Install plugins from the org marketplace as they appear
 
+If the catalog or a plugin does not work, see the
+[install troubleshooting guide](./docs/install-troubleshooting.md).
+
 ## Publish a New Plugin
 
 ```bash
