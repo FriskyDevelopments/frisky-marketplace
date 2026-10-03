@@ -62,6 +62,27 @@ git add -A && git commit -m "add my-plugin" && git push
 (`path`) or external repos (`url`), with optional `description`, `category`,
 and `owner` metadata.
 
+## Verify External Plugin URLs (item 29)
+
+Requires Python 3.10+; no dependencies or credentials are needed.
+
+```bash
+# Offline regression tests
+python3 -B -m unittest discover -s tests -v
+
+# Live, read-only URL check (nonzero exit means at least one failure)
+python3 -B scripts/check_external_urls.py --timeout 15
+```
+
+The live check follows redirects and checks external index `url` entries,
+manifest `websiteURL`/`iconUrl` values, and remote `mcpServers.*.url` endpoints.
+Empty values, local icons, and stdio servers are skipped. It uses HEAD, falling
+back to GET on HTTP 405, without reading response bodies or invoking MCP tools.
+Public pages/assets require HTTP 2xx. MCP HTTP 401/403/405/406/415 responses count
+only as reachability evidence, not successful authentication or plugin operation.
+DNS/TLS errors, timeouts, missing URLs, rate limits, and server errors fail;
+a public-site HTTP 403 also fails even if it may be a bot restriction.
+
 ## Layout
 
 ```
