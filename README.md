@@ -91,6 +91,11 @@ Run `.venv/bin/python -m scripts.generate_roster` after changing the index or th
 manifest fields. Tests reject stale generated content; other README sections stay
 hand-maintained. External `url` entries do not require a checkout.
 
+Skill checks require each declared skills directory to contain skill folders with
+nonempty `SKILL.md` files. Local inline/image and reference-style Markdown links
+must resolve within the plugin; remote links are not fetched. A `sessionStart.skill`
+must match a declared skill folder.
+
 ## Layout
 
 ```

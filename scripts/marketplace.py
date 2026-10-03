@@ -1,5 +1,7 @@
 import json
 from pathlib import Path
+import re
+from urllib.parse import unquote, urlsplit
 
 from jsonschema import Draft202012Validator, FormatChecker
 
@@ -48,3 +50,34 @@ def validate_manifest(manifest):
         # Do not echo manifest values, which may contain connection configuration.
         locations = ["/".join(map(str, error.absolute_path)) or "<root>" for error in errors]
         raise ValueError("Invalid manifest fields: " + ", ".join(locations))
+
+
+def validate_skills(manifest, plugin_root):
+    skills = {}
+    if "skills" in manifest:
+        directory = local_path(plugin_root, manifest["skills"])
+        if not directory.is_dir():
+            raise ValueError("Declared skills directory is missing")
+        for child in sorted(directory.iterdir()):
+            if child.name.startswith(".") or not child.is_dir():
+                continue
+            skill = local_path(plugin_root, str(child.relative_to(plugin_root))) / "SKILL.md"
+            skill = local_path(plugin_root, str(skill.relative_to(plugin_root)))
+            if not skill.is_file() or not skill.read_text(encoding="utf-8").strip():
+                raise ValueError("Skill must have a nonempty SKILL.md")
+            skills[child.name] = skill
+        if not skills:
+            raise ValueError("Declared skills directory has no skills")
+    if "sessionStart" in manifest and manifest["sessionStart"]["skill"] not in skills:
+        raise ValueError("sessionStart references a missing skill")
+    for skill in skills.values():
+        text = skill.read_text(encoding="utf-8")
+        links = re.findall(r"\[[^\]]*\]\(\s*(<[^>]+>|[^\s)]+)", text)
+        links += re.findall(r"^\s*\[[^\]]+\]:\s*(<[^>]+>|\S+)", text, re.MULTILINE)
+        for link in links:
+            target = urlsplit(link.strip("<>"))
+            if target.scheme or target.netloc or not target.path:
+                continue
+            path = local_path(plugin_root, str(skill.parent.relative_to(plugin_root) / unquote(target.path)))
+            if not path.exists():
+                raise ValueError("Skill has a missing local link target")
