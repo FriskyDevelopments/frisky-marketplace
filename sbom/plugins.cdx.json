@@ -1,0 +1,685 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:00000000-0000-0000-0000-00000000f36b",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "bom-ref": "marketplace",
+      "type": "application",
+      "name": "frisky",
+      "description": "Frisky Marketplace — packaged Kimi plugins"
+    },
+    "properties": [
+      {
+        "name": "marketplace:pluginCount",
+        "value": "12"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "plugin/chatprd",
+      "type": "application",
+      "name": "chatprd",
+      "description": "ChatPRD MCP connector — push PRDs, feature specs and FriskyClaw ops digests into ChatPRD via OAuth (no API key)",
+      "properties": [
+        {
+          "name": "marketplace:path",
+          "value": "./chatprd"
+        },
+        {
+          "name": "marketplace:category",
+          "value": "PRODUCTIVITY"
+        },
+        {
+          "name": "marketplace:owner",
+          "value": "friskypup"
+        },
+        {
+          "name": "marketplace:manifest",
+          "value": "kimi.plugin.json"
+        }
+      ],
+      "version": "0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "author": "Local developer",
+      "components": [
+        {
+          "bom-ref": "chatprd/mcp/chatprd/https://app.chatprd.ai/mcp",
+          "type": "service",
+          "name": "chatprd",
+          "description": "Hosted MCP endpoint for chatprd",
+          "externalReferences": [
+            {
+              "type": "service",
+              "url": "https://app.chatprd.ai/mcp"
+            }
+          ],
+          "properties": [
+            {
+              "name": "mcp:transport",
+              "value": "hosted"
+            },
+            {
+              "name": "mcp:endpoint",
+              "value": "https://app.chatprd.ai/mcp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "plugin/cloudflare-connector",
+      "type": "application",
+      "name": "cloudflare-connector",
+      "description": "连接 Cloudflare 官方 MCP 服务，管理 Workers、Pages、KV、D1、R2、DNS、Zero Trust、Analytics 等全套 Cloudflare 资源，OAuth 授权",
+      "properties": [
+        {
+          "name": "marketplace:path",
+          "value": "./cloudflare-connector"
+        },
+        {
+          "name": "marketplace:category",
+          "value": "DEVELOPER_TOOLS"
+        },
+        {
+          "name": "marketplace:owner",
+          "value": "friskypup"
+        },
+        {
+          "name": "marketplace:manifest",
+          "value": "kimi.plugin.json"
+        }
+      ],
+      "version": "0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "author": "Local developer",
+      "components": [
+        {
+          "bom-ref": "cloudflare-connector/mcp/cloudflare-connector/https://mcp.cloudflare.com/mcp",
+          "type": "service",
+          "name": "cloudflare-connector",
+          "description": "Hosted MCP endpoint for cloudflare-connector",
+          "externalReferences": [
+            {
+              "type": "service",
+              "url": "https://mcp.cloudflare.com/mcp"
+            }
+          ],
+          "properties": [
+            {
+              "name": "mcp:transport",
+              "value": "hosted"
+            },
+            {
+              "name": "mcp:endpoint",
+              "value": "https://mcp.cloudflare.com/mcp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "plugin/composio-connector",
+      "type": "application",
+      "name": "composio-connector",
+      "description": "连接 Composio 托管 MCP 服务，通过一个端点调用 1000+ 应用的托管工具（Gmail、Slack、Notion、Linear、HubSpot 等），Composio 统一管理 OAuth 授权",
+      "properties": [
+        {
+          "name": "marketplace:path",
+          "value": "./composio-connector"
+        },
+        {
+          "name": "marketplace:category",
+          "value": "PRODUCTIVITY"
+        },
+        {
+          "name": "marketplace:owner",
+          "value": "friskypup"
+        },
+        {
+          "name": "marketplace:manifest",
+          "value": "kimi.plugin.json"
+        }
+      ],
+      "version": "0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "author": "Local developer",
+      "components": [
+        {
+          "bom-ref": "composio-connector/mcp/composio-connector/https://connect.composio.dev/mcp",
+          "type": "service",
+          "name": "composio-connector",
+          "description": "Hosted MCP endpoint for composio-connector",
+          "externalReferences": [
+            {
+              "type": "service",
+              "url": "https://connect.composio.dev/mcp"
+            }
+          ],
+          "properties": [
+            {
+              "name": "mcp:transport",
+              "value": "hosted"
+            },
+            {
+              "name": "mcp:endpoint",
+              "value": "https://connect.composio.dev/mcp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "plugin/convex-connector",
+      "type": "application",
+      "name": "convex-connector",
+      "description": "连接你的 Convex 项目：通过官方 convex CLI 内置的 MCP server（convex mcp start，Beta）查看部署状态、浏览数据表、查询数据、运行函数、查看日志与性能洞察、管理环境变量。",
+      "properties": [
+        {
+          "name": "marketplace:path",
+          "value": "./convex-connector"
+        },
+        {
+          "name": "marketplace:category",
+          "value": "DEVELOPER_TOOLS"
+        },
+        {
+          "name": "marketplace:owner",
+          "value": "friskypup"
+        },
+        {
+          "name": "marketplace:manifest",
+          "value": "kimi.plugin.json"
+        }
+      ],
+      "version": "0.1.0+local.20260909-071540",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "author": "Local developer",
+      "components": [
+        {
+          "bom-ref": "convex-connector/mcp/convex-connector",
+          "type": "application",
+          "name": "convex-connector",
+          "description": "Local MCP process for convex-connector",
+          "properties": [
+            {
+              "name": "mcp:transport",
+              "value": "local"
+            },
+            {
+              "name": "mcp:command",
+              "value": "npx -y convex@1.45.0 mcp start"
+            },
+            {
+              "name": "mcp:package",
+              "value": "convex@1.45.0"
+            }
+          ],
+          "purl": "pkg:npm/convex@1.45.0",
+          "version": "1.45.0"
+        }
+      ]
+    },
+    {
+      "bom-ref": "plugin/folios",
+      "type": "application",
+      "name": "folios",
+      "description": "Folios — espacio de trabajo inteligente de evidencia / intelligent proof workspace. ES: Folios reúne tu material de trabajo, lo conecta con tu intención y lo convierte en folios estructurados y compartibles. Organiza tus flujos de trabajo como Playbooks —investigación de mercado, pitch a inversionistas, QBR, video con IA, traducción de PDF y más— con experiencia bilingüe: español (México) como idioma principal y English (US) como segundo idioma, para equipos que trabajan entre México y EE. UU. Diseño Editorial Workbench con ambición de nivel Awwwards: tipografía expresiva, motion con propósito, composición editorial asimétrica. EN: Folios collects your working material, connects it to your intent, and turns it into structured, shareable folios. Organize your workflows as Playbooks — market research, investor pitch, QBR, AI video, PDF translation, and more — with a bilingual experience: Spanish (Mexico) as the primary language and English (US) as a user-controlled second locale for teams working across Mexico and the United States. Editorial Workbench design with Awwwards-level ambition: expressive typography, purposeful motion, asymmetric editorial composition.",
+      "properties": [
+        {
+          "name": "marketplace:path",
+          "value": "./folios"
+        },
+        {
+          "name": "marketplace:category",
+          "value": "PRODUCTIVITY"
+        },
+        {
+          "name": "marketplace:owner",
+          "value": "friskypup"
+        },
+        {
+          "name": "marketplace:manifest",
+          "value": "kimi.plugin.json"
+        }
+      ],
+      "version": "0.1.0+local.20260909-071654",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "author": "Local developer"
+    },
+    {
+      "bom-ref": "plugin/framer",
+      "type": "application",
+      "name": "framer",
+      "description": "Diseña, edita y publica sitios web en Framer desde Kimi: lee páginas y contexto del proyecto, gestiona colecciones CMS, aplica cambios, previsualiza y publica/despliega con el MCP de Framer (framer-mcp-server vía npx).",
+      "properties": [
+        {
+          "name": "marketplace:path",
+          "value": "./framer"
+        },
+        {
+          "name": "marketplace:category",
+          "value": "PRODUCTIVITY"
+        },
+        {
+          "name": "marketplace:owner",
+          "value": "friskypup"
+        },
+        {
+          "name": "marketplace:manifest",
+          "value": "kimi.plugin.json"
+        }
+      ],
+      "version": "0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "author": "Local developer",
+      "components": [
+        {
+          "bom-ref": "framer/mcp/framer",
+          "type": "application",
+          "name": "framer",
+          "description": "Local MCP process for framer",
+          "properties": [
+            {
+              "name": "mcp:transport",
+              "value": "local"
+            },
+            {
+              "name": "mcp:command",
+              "value": "npx -y framer-mcp-server"
+            },
+            {
+              "name": "mcp:requiredEnv",
+              "value": "FRAMER_API_KEY,FRAMER_PROJECT_URL"
+            },
+            {
+              "name": "mcp:package",
+              "value": "framer-mcp-server"
+            }
+          ],
+          "purl": "pkg:npm/framer-mcp-server"
+        }
+      ]
+    },
+    {
+      "bom-ref": "plugin/friskydev-mcp",
+      "type": "application",
+      "name": "friskydev-mcp",
+      "description": "Boutique AI operator infrastructure — 15 specialists, unified MongoDB memory, deployable MCP surface for ChatGPT, Codex & AI workers. Cyberpunk clarity without dashboard clutter.",
+      "properties": [
+        {
+          "name": "marketplace:path",
+          "value": "./friskydev-mcp"
+        },
+        {
+          "name": "marketplace:category",
+          "value": "PRODUCTIVITY"
+        },
+        {
+          "name": "marketplace:owner",
+          "value": "friskypup"
+        },
+        {
+          "name": "marketplace:manifest",
+          "value": "kimi.plugin.json"
+        }
+      ],
+      "version": "0.1.0+local.20260909-122457",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "author": "Local developer",
+      "components": [
+        {
+          "bom-ref": "friskydev-mcp/mcp/friskydev-mcp/https://mcp.friskydev.com/mcp",
+          "type": "service",
+          "name": "friskydev-mcp",
+          "description": "Hosted MCP endpoint for friskydev-mcp",
+          "externalReferences": [
+            {
+              "type": "service",
+              "url": "https://mcp.friskydev.com/mcp"
+            }
+          ],
+          "properties": [
+            {
+              "name": "mcp:transport",
+              "value": "hosted"
+            },
+            {
+              "name": "mcp:endpoint",
+              "value": "https://mcp.friskydev.com/mcp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "plugin/magic-patterns",
+      "type": "application",
+      "name": "magic-patterns",
+      "description": "Magic Patterns official MCP — prototype ideas seeded from local UI, generate design directions, port local UI into hosted designs, adapt designs back into production code",
+      "properties": [
+        {
+          "name": "marketplace:path",
+          "value": "./magic-patterns"
+        },
+        {
+          "name": "marketplace:category",
+          "value": "PRODUCTIVITY"
+        },
+        {
+          "name": "marketplace:owner",
+          "value": "friskypup"
+        },
+        {
+          "name": "marketplace:manifest",
+          "value": "kimi.plugin.json"
+        }
+      ],
+      "version": "0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "author": "Local developer",
+      "components": [
+        {
+          "bom-ref": "magic-patterns/mcp/magic-patterns/https://mcp.magicpatterns.com/mcp",
+          "type": "service",
+          "name": "magic-patterns",
+          "description": "Hosted MCP endpoint for magic-patterns",
+          "externalReferences": [
+            {
+              "type": "service",
+              "url": "https://mcp.magicpatterns.com/mcp"
+            }
+          ],
+          "properties": [
+            {
+              "name": "mcp:transport",
+              "value": "hosted"
+            },
+            {
+              "name": "mcp:endpoint",
+              "value": "https://mcp.magicpatterns.com/mcp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "plugin/n8n-connector",
+      "type": "application",
+      "name": "n8n-connector",
+      "description": "连接你自托管的 n8n 实例（n8n.friskydev.com）内置 MCP 服务，搜索和触发工作流、创建/编辑工作流与数据表、管理执行记录",
+      "properties": [
+        {
+          "name": "marketplace:path",
+          "value": "./n8n-connector"
+        },
+        {
+          "name": "marketplace:category",
+          "value": "PRODUCTIVITY"
+        },
+        {
+          "name": "marketplace:owner",
+          "value": "friskypup"
+        },
+        {
+          "name": "marketplace:manifest",
+          "value": "kimi.plugin.json"
+        }
+      ],
+      "version": "0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "author": "Local developer",
+      "components": [
+        {
+          "bom-ref": "n8n-connector/mcp/n8n-connector/https://n8n.friskydev.com/mcp-server/http",
+          "type": "service",
+          "name": "n8n-connector",
+          "description": "Hosted MCP endpoint for n8n-connector",
+          "externalReferences": [
+            {
+              "type": "service",
+              "url": "https://n8n.friskydev.com/mcp-server/http"
+            }
+          ],
+          "properties": [
+            {
+              "name": "mcp:transport",
+              "value": "hosted"
+            },
+            {
+              "name": "mcp:endpoint",
+              "value": "https://n8n.friskydev.com/mcp-server/http"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "plugin/perplexity",
+      "type": "application",
+      "name": "perplexity",
+      "description": "Perplexity official hosted MCP — real-time web search, conversational AI and reasoning inside your sessions via OAuth sign-in or API key",
+      "properties": [
+        {
+          "name": "marketplace:path",
+          "value": "./perplexity"
+        },
+        {
+          "name": "marketplace:category",
+          "value": "PRODUCTIVITY"
+        },
+        {
+          "name": "marketplace:owner",
+          "value": "friskypup"
+        },
+        {
+          "name": "marketplace:manifest",
+          "value": "kimi.plugin.json"
+        }
+      ],
+      "version": "0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "author": "Local developer",
+      "components": [
+        {
+          "bom-ref": "perplexity/mcp/perplexity/https://api.perplexity.ai/mcp",
+          "type": "service",
+          "name": "perplexity",
+          "description": "Hosted MCP endpoint for perplexity",
+          "externalReferences": [
+            {
+              "type": "service",
+              "url": "https://api.perplexity.ai/mcp"
+            }
+          ],
+          "properties": [
+            {
+              "name": "mcp:transport",
+              "value": "hosted"
+            },
+            {
+              "name": "mcp:endpoint",
+              "value": "https://api.perplexity.ai/mcp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "plugin/render",
+      "type": "application",
+      "name": "render",
+      "description": "Manage Render cloud infrastructure with Render's official MCP server: list workspaces and services, create web services, static sites, cron jobs, Postgres databases and Key Value stores, inspect deploys, read logs and metrics, update env vars, and run read-only SQL on Render Postgres.",
+      "properties": [
+        {
+          "name": "marketplace:path",
+          "value": "./render"
+        },
+        {
+          "name": "marketplace:category",
+          "value": "DEVTOOLS"
+        },
+        {
+          "name": "marketplace:owner",
+          "value": "friskypup"
+        },
+        {
+          "name": "marketplace:manifest",
+          "value": "kimi.plugin.json"
+        }
+      ],
+      "version": "0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "author": "Local developer",
+      "components": [
+        {
+          "bom-ref": "render/mcp/render/https://mcp.render.com/mcp",
+          "type": "service",
+          "name": "render",
+          "description": "Hosted MCP endpoint for render",
+          "externalReferences": [
+            {
+              "type": "service",
+              "url": "https://mcp.render.com/mcp"
+            }
+          ],
+          "properties": [
+            {
+              "name": "mcp:transport",
+              "value": "hosted"
+            },
+            {
+              "name": "mcp:endpoint",
+              "value": "https://mcp.render.com/mcp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bom-ref": "plugin/sentry-connector",
+      "type": "application",
+      "name": "sentry-connector",
+      "description": "连接 Sentry 官方 MCP 服务，查询错误、issue、事件、release、trace、session replay 等监控数据",
+      "properties": [
+        {
+          "name": "marketplace:path",
+          "value": "./sentry-connector"
+        },
+        {
+          "name": "marketplace:category",
+          "value": "DEVELOPER_TOOLS"
+        },
+        {
+          "name": "marketplace:owner",
+          "value": "friskypup"
+        },
+        {
+          "name": "marketplace:manifest",
+          "value": "kimi.plugin.json"
+        }
+      ],
+      "version": "0.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "author": "Local developer",
+      "components": [
+        {
+          "bom-ref": "sentry-connector/mcp/sentry-connector/https://mcp.sentry.dev/mcp",
+          "type": "service",
+          "name": "sentry-connector",
+          "description": "Hosted MCP endpoint for sentry-connector",
+          "externalReferences": [
+            {
+              "type": "service",
+              "url": "https://mcp.sentry.dev/mcp"
+            }
+          ],
+          "properties": [
+            {
+              "name": "mcp:transport",
+              "value": "hosted"
+            },
+            {
+              "name": "mcp:endpoint",
+              "value": "https://mcp.sentry.dev/mcp"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

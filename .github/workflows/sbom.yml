@@ -1,0 +1,47 @@
+name: sbom
+
+# Publish an SBOM for the packaged plugins. On every push/PR we verify the
+# committed SBOM is in sync with the manifests and run the validation tests.
+# On pushes to the default branch we also upload the SBOM as a build artifact
+# and attach it to any GitHub Release so consumers can download it.
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sbom:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Verify committed SBOM is up to date
+        run: python3 scripts/generate_sbom.py --check
+
+      - name: Validate SBOM against manifests
+        run: python3 tests/test_sbom.py
+
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: plugins-sbom
+          path: sbom/plugins.cdx.json
+
+      - name: Attach SBOM to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: sbom/plugins.cdx.json
