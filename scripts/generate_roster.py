@@ -1,8 +1,9 @@
 import argparse
 import html
 import re
+from urllib.parse import quote
 
-from scripts.marketplace import ROOT, local_path, read_json, validate_index_paths
+from scripts.marketplace import ROOT, local_path, read_json, validate_index
 
 
 def cell(value):
@@ -22,7 +23,7 @@ def replace_region(text, name, content):
 
 
 def generate_readme(text, index, root=ROOT):
-    validate_index_paths(index, root)
+    validate_index(index, root)
     rows = [
         "| # | | Plugin | What it wires into your chats | Category |",
         "|---|-|--------|-------------------------------|----------|",
@@ -38,7 +39,7 @@ def generate_readme(text, index, root=ROOT):
             if icons:
                 source = "./" + icons[0].relative_to(root).as_posix()
                 icon = f'<img src="{html.escape(source, quote=True)}" width="24" alt="{cell(entry["name"])}">'
-        target = entry.get("path", entry.get("url", ""))
+        target = quote(entry.get("path", entry.get("url", "")), safe="/:?#@!$&'*+,;=%~")
         rows.append(
             f'| {number:02d} | {icon} | [**{cell(entry["name"])}**]({target}) | '
             f'{cell(description)} | `{cell(entry.get("category", ""))}` |'

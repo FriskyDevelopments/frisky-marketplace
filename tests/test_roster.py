@@ -11,7 +11,7 @@ class RosterTests(unittest.TestCase):
 
     def test_generation_is_idempotent_and_preserves_manual_content(self):
         text = (ROOT / "README.md").read_text(encoding="utf-8")
-        index = {"plugins": [{"name": "external", "url": "https://example.com/repo", "description": "A | B\nC"}]}
+        index = {"name": "fixture", "plugins": [{"name": "external", "url": "https://example.com/repo", "description": "A | B\nC"}]}
         generated = generate_readme(text, index)
         self.assertEqual(generated, generate_readme(generated, index))
         self.assertIn("plugins-1-", generated)
@@ -22,4 +22,4 @@ class RosterTests(unittest.TestCase):
 
     def test_missing_generation_markers_fail(self):
         with self.assertRaises(ValueError):
-            generate_readme("manual README", {"plugins": []})
+            generate_readme("manual README", {"name": "fixture", "plugins": []})

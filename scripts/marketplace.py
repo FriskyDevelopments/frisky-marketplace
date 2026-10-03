@@ -41,15 +41,38 @@ def manifest_paths(root=ROOT):
     )
 
 
-def validate_manifest(manifest):
-    schema = read_json(ROOT / "schemas/plugin-manifest.schema.json")
+def validate_schema(value, filename, label):
+    schema = read_json(ROOT / "schemas" / filename)
     Draft202012Validator.check_schema(schema)
     validator = Draft202012Validator(schema, format_checker=FormatChecker())
-    errors = list(validator.iter_errors(manifest))
+    errors = list(validator.iter_errors(value))
     if errors:
         # Do not echo manifest values, which may contain connection configuration.
         locations = ["/".join(map(str, error.absolute_path)) or "<root>" for error in errors]
-        raise ValueError("Invalid manifest fields: " + ", ".join(locations))
+        raise ValueError(f"Invalid {label} fields: " + ", ".join(locations))
+
+
+def validate_manifest(manifest):
+    validate_schema(manifest, "plugin-manifest.schema.json", "manifest")
+
+
+def validate_index(index, root=ROOT):
+    validate_schema(index, "marketplace-index.schema.json", "index")
+    validate_index_paths(index, root)
+    names = set()
+    paths = set()
+    for entry in index["plugins"]:
+        if entry["name"] in names:
+            raise ValueError("Duplicate indexed plugin name")
+        names.add(entry["name"])
+        if "path" in entry:
+            path = local_path(root, entry["path"])
+            if path in paths:
+                raise ValueError("Duplicate indexed plugin path")
+            paths.add(path)
+            manifest = read_json(path / "kimi.plugin.json")
+            if manifest.get("name") != entry["name"]:
+                raise ValueError("Index and manifest plugin names differ")
 
 
 def validate_skills(manifest, plugin_root):

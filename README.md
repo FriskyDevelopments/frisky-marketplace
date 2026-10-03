@@ -96,6 +96,12 @@ nonempty `SKILL.md` files. Local inline/image and reference-style Markdown links
 must resolve within the plugin; remote links are not fetched. A `sessionStart.skill`
 must match a declared skill folder.
 
+Index compatibility tests cover the native `{ "name": ..., "plugins": [...] }`
+shape, exactly one local `path` or external HTTP(S) `url` per entry, optional
+metadata (including multilingual descriptions and existing category labels),
+unique plugin names/local paths, and matching local manifest names. Unknown
+metadata remains allowed for forward compatibility.
+
 ## Layout
 
 ```
