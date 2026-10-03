@@ -41,6 +41,11 @@ Directory's **Organization** tab — the app re-fetches it periodically, so
    `https://github.com/FriskyDevelopments/frisky-marketplace`
 3. Install plugins from the org marketplace as they appear
 
+## Release Notes
+
+See the [marketplace release notes](./CHANGELOG.md) for recent additions,
+connector changes, and any required setup or migration steps.
+
 ## Publish a New Plugin
 
 ```bash
@@ -54,6 +59,7 @@ cp -R ~/path/to/my-plugin ./my-plugin
 #    ./my-plugin/icon.svg  (or icon.png)
 
 # 4. add a row to the Roster above, bump the plugin-count badge,
+#    and add release notes to CHANGELOG.md (see its maintenance guide)
 #    then push — the app picks it up on its next fetch
 git add -A && git commit -m "add my-plugin" && git push
 ```
@@ -69,6 +75,7 @@ frisky-marketplace/
 ├── assets/
 │   └── banner.svg        ← this README's hero
 ├── plugins.json          ← the index (name: "frisky")
+├── CHANGELOG.md          ← marketplace updates + migration notes
 ├── README.md
 └── <plugin>/             ← one folder per plugin:
     ├── kimi.plugin.json  ← manifest (name, version, interface, mcpServers)
