@@ -76,6 +76,36 @@ frisky-marketplace/
     └── skills/           ← optional skill instructions (some plugins)
 ```
 
+## Upstream MCP versions
+
+Local MCP launch packages must use exact versions, not bare package names,
+tags (`latest`), or ranges. Convex is pinned to `convex@1.45.0` in both
+`convex-connector/kimi.plugin.json` and `convex-connector/.mcp.json`; update
+both together when reviewing an upstream upgrade. This pins the launch
+package, not its transitive dependencies.
+
+The only current exception is Framer's `framer-mcp-server`: the public npm
+registry returned HTTP 404 on 2026-10-03, so no published version could be
+verified. Its existing launch declaration is unchanged (and may fail to
+install). Once a release is available, verify its compatibility, pin that
+exact version in the manifest, update the skill's launch example, and remove
+the exception from the test. Do not invent a version or substitute another
+package without reviewing compatibility.
+
+Hosted HTTP MCP endpoints are provider-managed; this repository cannot pin
+their server binaries. Their URLs are unchanged, rather than adding invented
+version paths or query parameters.
+
+Run the offline regression tests with:
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+For a concrete read-only upstream check, run `npm view convex@1.45.0 version`
+(expected: `1.45.0`) and `npm view framer-mcp-server versions --json`
+(currently expected: `E404`). Neither command launches an MCP or deploys.
+
 ---
 
 <div align="center">
