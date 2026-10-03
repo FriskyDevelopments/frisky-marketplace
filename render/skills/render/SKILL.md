@@ -16,10 +16,12 @@ The MCP connection needs a Render API key as a Bearer token. If MCP calls fail w
 401/403 or "unauthorized":
 
 1. Tell the user to create a key: Render Dashboard → **Account Settings → API Keys → Create API Key**.
-   Warn them the key is broadly scoped across all their workspaces.
+   Warn them the key is broadly scoped across all their workspaces. Use a dedicated key and
+   revoke it when finished.
 2. The user connects the hosted MCP server with `Authorization: Bearer <key>` (plugin/MCP
    connection UI). Never ask the user to paste the key into chat — it goes into the MCP
-   connection configuration only.
+   connection configuration only. Do not add OAuth scopes to this plugin. The protected
+   resource publishes no `scopes_supported` list.
 
 ## Standard flow
 

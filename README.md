@@ -62,6 +62,23 @@ git add -A && git commit -m "add my-plugin" && git push
 (`path`) or external repos (`url`), with optional `description`, `category`,
 and `owner` metadata.
 
+## OAuth scopes
+
+Hosted plugins that sign in with OAuth have a reviewed scope set in
+[`oauth-scopes.json`](./oauth-scopes.json). A request is capped by the MCP
+protected-resource metadata (`scopes_supported` on
+`/.well-known/oauth-protected-resource`), not by the authorization server's
+full catalog. Write and admin scopes are rejected unless a plugin review
+explicitly allows them. None do today.
+
+```bash
+npm test
+npm run audit:oauth-scopes
+```
+
+`npm test` checks the policy against every plugin manifest. The live audit
+refetches each server's metadata and fails if the published scopes changed.
+
 ## Layout
 
 ```
