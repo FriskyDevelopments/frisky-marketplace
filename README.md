@@ -34,6 +34,46 @@ Directory's **Organization** tab — the app re-fetches it periodically, so
 | 11 | <img src="./perplexity/icon.svg" width="24" alt="perplexity"> | [**perplexity**](./perplexity) | Perplexity official MCP — real-time web search, reasoning, conversational AI | `PRODUCTIVITY` |
 | 12 | <img src="./magic-patterns/icon.svg" width="24" alt="magic-patterns"> | [**magic-patterns**](./magic-patterns) | Magic Patterns official MCP — prototype UI, design directions, production code handoff | `PRODUCTIVITY` |
 
+## Supported App Versions
+
+Compatibility refers to the **Kimi app version**, not the plugin's own
+`version` in `kimi.plugin.json`. No app versions have been verified in this
+repository yet. **Not yet verified** means support is unknown, not that all
+versions are supported or that the plugin is incompatible.
+
+<!-- app-compatibility:start -->
+| Plugin | Supported Kimi app versions |
+|--------|-----------------------------|
+| `chatprd` | Not yet verified |
+| `cloudflare-connector` | Not yet verified |
+| `composio-connector` | Not yet verified |
+| `convex-connector` | Not yet verified |
+| `folios` | Not yet verified |
+| `framer` | Not yet verified |
+| `friskydev-mcp` | Not yet verified |
+| `magic-patterns` | Not yet verified |
+| `n8n-connector` | Not yet verified |
+| `perplexity` | Not yet verified |
+| `render` | Not yet verified |
+| `sentry-connector` | Not yet verified |
+<!-- app-compatibility:end -->
+
+Maintainers: after checking a plugin on a released Kimi app version, replace
+its `null` in `app-compatibility.json` with the exact verified version labels
+(for example, `["1.2.3", "1.3.0"]`; these are illustrative, not support claims).
+Record the tested versions and results in the PR. This file is repository-owned
+documentation metadata, not a native Kimi manifest field or an install-time
+compatibility gate. Add an entry for each new indexed plugin.
+
+Run `python3 scripts/app_compatibility.py` and replace the marked table above
+with its output. Verify with:
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 scripts/app_compatibility.py --check
+git diff --check
+```
+
 ## Install
 
 1. Open the Kimi app → **Directory** → **Organization** tab
