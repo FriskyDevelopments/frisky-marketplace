@@ -62,6 +62,20 @@ git add -A && git commit -m "add my-plugin" && git push
 (`path`) or external repos (`url`), with optional `description`, `category`,
 and `owner` metadata.
 
+## Marketplace checks
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-test.txt
+.venv/bin/python -m unittest discover -s tests -v
+```
+
+Every `kimi.plugin.json`, including unindexed plugins, is validated against the
+checked-in `schemas/plugin-manifest.schema.json`. This is the repository's
+offline contract, not a copy of the upstream Kimi schema. It checks known fields
+while allowing extensions and existing category labels. CI runs the same tests;
+it does not connect to MCP servers or deploy anything.
+
 ## Layout
 
 ```

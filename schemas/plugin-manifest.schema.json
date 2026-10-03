@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Frisky marketplace plugin manifest contract",
+  "type": "object",
+  "required": ["name", "version", "interface"],
+  "properties": {
+    "$schema": {"type": "string", "format": "uri"},
+    "name": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"},
+    "description": {"type": "string"},
+    "keywords": {"type": "array", "items": {"type": "string"}},
+    "author": {"type": "string"},
+    "license": {"type": "string"},
+    "skillInstructions": {"type": "string"},
+    "skills": {"type": "string", "minLength": 1},
+    "sessionStart": {
+      "type": "object",
+      "required": ["skill"],
+      "properties": {"skill": {"type": "string", "minLength": 1}}
+    },
+    "interface": {
+      "type": "object",
+      "required": ["displayName"],
+      "properties": {
+        "displayName": {"type": "string", "minLength": 1},
+        "shortDescription": {"type": "string"},
+        "longDescription": {"type": "string"},
+        "developerName": {"type": "string"},
+        "websiteURL": {"type": "string"},
+        "iconUrl": {"type": "string"},
+        "category": {"type": "string"},
+        "hostKind": {"type": "string"},
+        "platforms": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "mcpServers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "oneOf": [{"required": ["url"]}, {"required": ["command"]}],
+        "properties": {
+          "url": {"type": "string", "format": "uri", "pattern": "^https?://"},
+          "command": {"type": "string", "minLength": 1},
+          "args": {"type": "array", "items": {"type": "string"}},
+          "env": {"type": "object", "additionalProperties": {"type": "string"}},
+          "headers": {"type": "object", "additionalProperties": {"type": "string"}}
+        }
+      }
+    }
+  }
+}
