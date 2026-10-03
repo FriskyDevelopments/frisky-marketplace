@@ -76,6 +76,29 @@ frisky-marketplace/
     └── skills/           ← optional skill instructions (some plugins)
 ```
 
+## Security — no secrets in plugin configs
+
+Plugin manifests are published as-is on every push, so they must **never**
+contain real credentials. Secrets are supplied at runtime (OAuth sign-in, or an
+`Authorization: Bearer <key>` header the user adds). Any credential field that
+appears in-repo — e.g. `FRAMER_API_KEY` — must stay an **empty-string
+placeholder**.
+
+A stdlib-only scanner enforces this:
+
+```bash
+# scan every plugins.json, */kimi.plugin.json and */.mcp.json
+python3 scripts/scan_secrets.py --root .
+
+# run the scanner's own tests
+python3 scripts/test_scan_secrets.py
+```
+
+Exit code `0` = clean, `1` = a likely secret was found, `2` = a parse/usage
+error. The same checks run in CI on every push and pull request
+(`.github/workflows/secret-scan.yml`). If the scanner flags a value, remove the
+credential, rotate it, and replace it with a placeholder before pushing.
+
 ---
 
 <div align="center">
