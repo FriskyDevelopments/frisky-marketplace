@@ -21,18 +21,18 @@ Directory's **Organization** tab — the app re-fetches it periodically, so
 
 | # | | Plugin | What it wires into your chats | Category |
 |---|-|--------|-------------------------------|----------|
-| 01 | <img src="./sentry-connector/icon.svg" width="24" alt="sentry"> | [**sentry-connector**](./sentry-connector) | Sentry's official MCP — errors, issues, traces, replays, release health | `DEVELOPER_TOOLS` |
-| 02 | <img src="./composio-connector/icon.svg" width="24" alt="composio"> | [**composio-connector**](./composio-connector) | Composio's hosted tool router — 1000+ apps behind one OAuth | `PRODUCTIVITY` |
-| 03 | <img src="./convex-connector/icon.jpg" width="24" alt="convex"> | [**convex-connector**](./convex-connector) | Convex backend — projects, deployments, data | `DEVELOPER_TOOLS` |
-| 04 | <img src="./friskydev-mcp/icon.png" width="24" alt="friskydev"> | [**friskydev-mcp**](./friskydev-mcp) | FriskyDev gateway — 15 specialist operators + shared memory | `PRODUCTIVITY` |
-| 05 | <img src="./render/icon.svg" width="24" alt="render"> | [**render**](./render) | Render.com — services, deploys, logs, cron jobs | `DEVTOOLS` |
-| 06 | <img src="./framer/icon.svg" width="24" alt="framer"> | [**framer**](./framer) | Framer — pages, CMS collections, publish | `PRODUCTIVITY` |
-| 07 | <img src="./chatprd/icon.png" width="24" alt="chatprd"> | [**chatprd**](./chatprd) | ChatPRD — product docs on demand | `PRODUCTIVITY` |
-| 08 | <img src="./folios/icon.svg" width="24" alt="folios"> | [**folios**](./folios) | Folios — evidence workspaces, playbooks | `PRODUCTIVITY` |
-| 09 | <img src="./cloudflare-connector/icon.svg" width="24" alt="cloudflare"> | [**cloudflare-connector**](./cloudflare-connector) | Cloudflare official MCP — Workers, Pages, KV, D1, R2, DNS, Zero Trust, Analytics | `DEVELOPER_TOOLS` |
-| 10 | <img src="./n8n-connector/icon.png" width="24" alt="n8n"> | [**n8n-connector**](./n8n-connector) | Your self-hosted n8n instance MCP — workflows, executions, data tables | `PRODUCTIVITY` |
-| 11 | <img src="./perplexity/icon.svg" width="24" alt="perplexity"> | [**perplexity**](./perplexity) | Perplexity official MCP — real-time web search, reasoning, conversational AI | `PRODUCTIVITY` |
-| 12 | <img src="./magic-patterns/icon.svg" width="24" alt="magic-patterns"> | [**magic-patterns**](./magic-patterns) | Magic Patterns official MCP — prototype UI, design directions, production code handoff | `PRODUCTIVITY` |
+| 01 | <img src="./sentry-connector/icon.svg" width="24" alt="sentry"> | [**Sentry Connector**](./sentry-connector) | Sentry's official MCP — errors, issues, traces, replays, release health | `DEVELOPER_TOOLS` |
+| 02 | <img src="./composio-connector/icon.svg" width="24" alt="composio"> | [**Composio Connector**](./composio-connector) | Composio's hosted tool router — 1000+ apps behind one OAuth | `PRODUCTIVITY` |
+| 03 | <img src="./convex-connector/icon.jpg" width="24" alt="convex"> | [**Convex Connector**](./convex-connector) | Convex backend — projects, deployments, data | `DEVELOPER_TOOLS` |
+| 04 | <img src="./friskydev-mcp/icon.png" width="24" alt="friskydev"> | [**Frisky Dev MCP**](./friskydev-mcp) | FriskyDev gateway — 15 specialist operators + shared memory | `PRODUCTIVITY` |
+| 05 | <img src="./render/icon.svg" width="24" alt="render"> | [**Render**](./render) | Render.com — services, deploys, logs, cron jobs | `DEVELOPER_TOOLS` |
+| 06 | <img src="./framer/icon.svg" width="24" alt="framer"> | [**Framer**](./framer) | Framer — pages, CMS collections, publish | `PRODUCTIVITY` |
+| 07 | <img src="./chatprd/icon.png" width="24" alt="chatprd"> | [**ChatPRD**](./chatprd) | ChatPRD — product docs on demand | `PRODUCTIVITY` |
+| 08 | <img src="./folios/icon.svg" width="24" alt="folios"> | [**Folios**](./folios) | Folios — evidence workspaces, playbooks | `PRODUCTIVITY` |
+| 09 | <img src="./cloudflare-connector/icon.svg" width="24" alt="cloudflare"> | [**Cloudflare Connector**](./cloudflare-connector) | Cloudflare official MCP — Workers, Pages, KV, D1, R2, DNS, Zero Trust, Analytics | `DEVELOPER_TOOLS` |
+| 10 | <img src="./n8n-connector/icon.png" width="24" alt="n8n"> | [**n8n Connector**](./n8n-connector) | Your self-hosted n8n instance MCP — workflows, executions, data tables | `PRODUCTIVITY` |
+| 11 | <img src="./perplexity/icon.svg" width="24" alt="perplexity"> | [**Perplexity**](./perplexity) | Perplexity official MCP — real-time web search, reasoning, conversational AI | `PRODUCTIVITY` |
+| 12 | <img src="./magic-patterns/icon.svg" width="24" alt="magic-patterns"> | [**Magic Patterns**](./magic-patterns) | Magic Patterns official MCP — prototype UI, design directions, production code handoff | `PRODUCTIVITY` |
 
 ## Install
 
@@ -61,6 +61,25 @@ git add -A && git commit -m "add my-plugin" && git push
 `plugins.json` is the native Kimi index — entries point at in-repo folders
 (`path`) or external repos (`url`), with optional `description`, `category`,
 and `owner` metadata.
+
+## Categories and naming
+
+- Use `DEVELOPER_TOOLS` for infrastructure, backend, and observability plugins;
+  use `PRODUCTIVITY` for workflow, design, research, and collaboration plugins.
+  Keep the index `category`, manifest `interface.category`, and roster identical.
+- Plugin IDs (`name`) are lowercase kebab-case and must match the folder name
+  and manifest `name`. Existing IDs and paths are stable install identifiers;
+  do not rename them just to add or remove `-connector` or `-mcp` suffixes.
+- Use the manifest `interface.displayName` as the roster label, preserving brand
+  spelling and capitalization (for example, `ChatPRD` and `n8n Connector`).
+  IDs belong in paths and configuration, not user-facing roster labels.
+
+Check these conventions without installing dependencies or contacting MCP servers:
+
+```bash
+python3 -B -m unittest discover -s tests -v
+git diff --check
+```
 
 ## Layout
 
