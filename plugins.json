@@ -47,7 +47,7 @@
       "name": "render",
       "path": "./render",
       "description": "Manage Render cloud infrastructure with Render's official MCP server: list workspaces and services, create web services, static sites, cron jobs, Postgres databases and Key Value stores, inspect deploys, read logs and metrics, update env vars, and run read-only SQL on Render Postgres.",
-      "category": "DEVTOOLS",
+      "category": "DEVELOPER_TOOLS",
       "owner": "friskypup"
     },
     {
