@@ -11,6 +11,27 @@ def read_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def local_path(root, value):
+    if not isinstance(value, str) or not value or Path(value).is_absolute():
+        raise ValueError("Expected a nonempty relative path")
+    root = root.resolve()
+    path = (root / value).resolve()
+    if not path.is_relative_to(root):
+        raise ValueError("Local path escapes its root")
+    return path
+
+
+def validate_index_paths(index, root=ROOT):
+    for entry in index["plugins"]:
+        if "path" not in entry:
+            continue
+        path = local_path(root, entry["path"])
+        if not path.is_dir():
+            raise ValueError("Indexed plugin directory is missing")
+        if not (path / "kimi.plugin.json").is_file():
+            raise ValueError("Indexed plugin manifest is missing")
+
+
 def manifest_paths(root=ROOT):
     return sorted(
         path for path in root.rglob("kimi.plugin.json")
