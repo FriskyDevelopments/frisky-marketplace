@@ -41,6 +41,11 @@ Directory's **Organization** tab — the app re-fetches it periodically, so
    `https://github.com/FriskyDevelopments/frisky-marketplace`
 3. Install plugins from the org marketplace as they appear
 
+## Release Notes
+
+See the [marketplace release notes](./CHANGELOG.md) for recent additions,
+connector changes, and any required setup or migration steps.
+
 ## Publish a New Plugin
 
 ```bash
@@ -54,6 +59,8 @@ cp -R ~/path/to/my-plugin ./my-plugin
 #    ./my-plugin/icon.svg  (or icon.png)
 
 # 4. add a row to the Roster above, bump the plugin-count badge,
+#    add a user-facing entry to CHANGELOG.md,
+#    and complete SECURITY_REVIEW.md before opening a pull request,
 #    then push — the app picks it up on its next fetch
 git add -A && git commit -m "add my-plugin" && git push
 ```
@@ -62,6 +69,28 @@ git add -A && git commit -m "add my-plugin" && git push
 (`path`) or external repos (`url`), with optional `description`, `category`,
 and `owner` metadata.
 
+Before a new plugin is published, copy the
+[new plugin security review](./SECURITY_REVIEW.md) into its pull request,
+complete every applicable item, and have an independent reviewer confirm it.
+Unchecked items block publication.
+
+## OAuth scope review
+
+[`oauth-scopes.json`](./oauth-scopes.json) records the scopes requested by
+each OAuth-backed connector and explains why each set is the minimum needed.
+It also records non-OAuth plugins so a new or changed connector cannot bypass
+the review.
+
+Run the policy check after changing a plugin or its authentication:
+
+```bash
+npm run audit:oauth-scopes
+```
+
+The check rejects missing reviews, mismatched server URLs, inline scope
+requests outside the reviewed inventory, and broad, write, admin, or
+`offline_access` scopes without an explicit rationale.
+
 ## Layout
 
 ```
@@ -69,6 +98,8 @@ frisky-marketplace/
 ├── assets/
 │   └── banner.svg        ← this README's hero
 ├── plugins.json          ← the index (name: "frisky")
+├── CHANGELOG.md          ← marketplace updates + migration notes
+├── SECURITY_REVIEW.md    ← required checklist for every new plugin
 ├── README.md
 └── <plugin>/             ← one folder per plugin:
     ├── kimi.plugin.json  ← manifest (name, version, interface, mcpServers)
