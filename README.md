@@ -74,6 +74,23 @@ Before a new plugin is published, copy the
 complete every applicable item, and have an independent reviewer confirm it.
 Unchecked items block publication.
 
+## OAuth scope review
+
+[`oauth-scopes.json`](./oauth-scopes.json) records the scopes requested by
+each OAuth-backed connector and explains why each set is the minimum needed.
+It also records non-OAuth plugins so a new or changed connector cannot bypass
+the review.
+
+Run the policy check after changing a plugin or its authentication:
+
+```bash
+npm run audit:oauth-scopes
+```
+
+The check rejects missing reviews, mismatched server URLs, inline scope
+requests outside the reviewed inventory, and broad, write, admin, or
+`offline_access` scopes without an explicit rationale.
+
 ## Layout
 
 ```

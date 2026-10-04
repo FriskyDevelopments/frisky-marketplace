@@ -1,0 +1,9 @@
+{
+  "name": "frisky-marketplace",
+  "private": true,
+  "scripts": {
+    "audit:oauth-scopes": "node scripts/audit-oauth-scopes.mjs",
+    "lint": "node --check scripts/audit-oauth-scopes.mjs && node --check scripts/oauth-scope-policy.mjs && node --check test/oauth-scopes.test.mjs",
+    "test": "node --test"
+  }
+}
