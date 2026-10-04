@@ -54,13 +54,18 @@ cp -R ~/path/to/my-plugin ./my-plugin
 #    ./my-plugin/icon.svg  (or icon.png)
 
 # 4. add a row to the Roster above, bump the plugin-count badge,
-#    then push — the app picks it up on its next fetch
+#    and complete SECURITY_REVIEW.md before opening a pull request
 git add -A && git commit -m "add my-plugin" && git push
 ```
 
 `plugins.json` is the native Kimi index — entries point at in-repo folders
 (`path`) or external repos (`url`), with optional `description`, `category`,
 and `owner` metadata.
+
+Before a new plugin is published, copy the
+[new plugin security review](./SECURITY_REVIEW.md) into its pull request,
+complete every applicable item, and have an independent reviewer confirm it.
+Unchecked items block publication.
 
 ## Layout
 
@@ -69,6 +74,7 @@ frisky-marketplace/
 ├── assets/
 │   └── banner.svg        ← this README's hero
 ├── plugins.json          ← the index (name: "frisky")
+├── SECURITY_REVIEW.md    ← required checklist for every new plugin
 ├── README.md
 └── <plugin>/             ← one folder per plugin:
     ├── kimi.plugin.json  ← manifest (name, version, interface, mcpServers)
