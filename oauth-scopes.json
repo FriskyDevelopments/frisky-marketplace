@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "auditedOn": "2026-10-03",
+  "plugins": {
+    "chatprd": {
+      "auth": "oauth",
+      "serverUrl": "https://app.chatprd.ai/mcp",
+      "requestedScopes": ["email", "profile"],
+      "reason": "Identity claims required by the hosted MCP server; no metadata, organization, or offline scopes are approved."
+    },
+    "cloudflare-connector": {
+      "auth": "oauth",
+      "serverUrl": "https://mcp.cloudflare.com/mcp",
+      "requestedScopes": ["account:read", "user:read"],
+      "reason": "Read account context and user identity only; DNS, Workers, and other write or admin scopes are not approved."
+    },
+    "composio-connector": {
+      "auth": "oauth",
+      "serverUrl": "https://connect.composio.dev/mcp",
+      "requestedScopes": ["email", "offline_access", "openid", "profile"],
+      "exceptions": {
+        "offline_access": "The hosted connector uses refresh tokens to maintain the MCP session; individual app permissions remain separately consented in Composio."
+      },
+      "reason": "OIDC identity scopes only; permissions for connected apps are granted separately and are not marketplace OAuth scopes."
+    },
+    "convex-connector": {
+      "auth": "local-cli",
+      "requestedScopes": [],
+      "reason": "The plugin starts the local Convex CLI and does not configure an OAuth scope request."
+    },
+    "folios": {
+      "auth": "none",
+      "requestedScopes": [],
+      "reason": "This skills-only plugin has no MCP server or OAuth client."
+    },
+    "framer": {
+      "auth": "api-key",
+      "requestedScopes": [],
+      "reason": "The local MCP process uses a user-supplied API key and does not configure OAuth."
+    },
+    "friskydev-mcp": {
+      "auth": "oauth",
+      "serverUrl": "https://mcp.friskydev.com/mcp",
+      "requestedScopes": ["frisky.mcp"],
+      "reason": "The gateway exposes one product-specific MCP scope and no broader scope is approved."
+    },
+    "magic-patterns": {
+      "auth": "oauth",
+      "serverUrl": "https://mcp.magicpatterns.com/mcp",
+      "requestedScopes": ["email", "offline_access", "openid", "profile"],
+      "exceptions": {
+        "offline_access": "The hosted MCP server requests refresh-token access to maintain its authenticated session."
+      },
+      "reason": "The hosted server requests only OIDC identity and session scopes; no product write or admin scope is approved."
+    },
+    "n8n-connector": {
+      "auth": "oauth",
+      "serverUrl": "https://n8n.friskydev.com/mcp-server/http",
+      "requestedScopes": [],
+      "reason": "The instance-level OAuth flow does not publish named scopes, so the marketplace must not add any."
+    },
+    "perplexity": {
+      "auth": "oauth",
+      "serverUrl": "https://api.perplexity.ai/mcp",
+      "requestedScopes": ["perplexity_api"],
+      "reason": "The single product-specific API scope is required; offline and broader account scopes are not approved."
+    },
+    "render": {
+      "auth": "api-key",
+      "serverUrl": "https://mcp.render.com/mcp",
+      "requestedScopes": [],
+      "reason": "The connector uses a user-supplied API key and the marketplace does not configure OAuth scopes."
+    },
+    "sentry-connector": {
+      "auth": "oauth",
+      "serverUrl": "https://mcp.sentry.dev/mcp",
+      "requestedScopes": ["org:read"],
+      "reason": "Read access covers issue and telemetry inspection; project, team, event, alert, and organization write scopes are not approved."
+    }
+  }
+}
