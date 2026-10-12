@@ -1,0 +1,22 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "friskydev-cloudflare",
+  "version": "0.1.0",
+  "description": "FR!SKY Cloudflare tools on the Frisky Dev MCP: deploy built sites to Cloudflare Pages, list Pages projects/deployments and status, list/deploy Workers, read DNS, purge cache. Token stays server-side.",
+  "keywords": ["cloudflare", "pages", "workers", "dns", "deploy", "frisky", "mcp"],
+  "author": "FriskyDevelopments",
+  "license": "MIT",
+  "skillInstructions": "Use for Cloudflare Pages deploys and status, Workers, DNS reads and cache purges. Call cloudflare_status first. Deploy and purge tools are externally visible: confirm with the user before calling them.",
+  "interface": {
+    "displayName": "FR!SKY Cloudflare",
+    "shortDescription": "Pages deploys, Workers, DNS and cache via the Frisky Dev MCP",
+    "longDescription": "Cloudflare tools served by mcp.friskydev.com: cloudflare_pages_deploy (direct upload of a build dir), Pages projects/deployments/status, Workers list/deploy, DNS zones/records (read), cache purge. Auth is a Cloudflare API token set by the owner as a server secret.",
+    "developerName": "FriskyDevelopments",
+    "websiteURL": "https://mcp.friskydev.com",
+    "iconUrl": "https://mcp.friskydev.com/icons/frisky-dev-mcp-neon-chatgpt-icon.png",
+    "category": "DEVELOPER_TOOLS"
+  },
+  "mcpServers": {
+    "friskydev-mcp": { "url": "https://mcp.friskydev.com/mcp" }
+  }
+}

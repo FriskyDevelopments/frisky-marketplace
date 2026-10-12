@@ -84,6 +84,13 @@
       "description": "Magic Patterns official MCP — prototype ideas seeded from local UI, generate design directions, port local UI into hosted designs, adapt designs back into production code",
       "category": "PRODUCTIVITY",
       "owner": "friskypup"
+    },
+    {
+      "name": "friskydev-cloudflare",
+      "path": "./friskydev-cloudflare",
+      "description": "FR!SKY Cloudflare: Pages deploy/status, Workers, DNS read, cache purge via the Frisky Dev MCP (server-side token)",
+      "category": "DEVELOPER_TOOLS",
+      "owner": "friskypup"
     }
   ]
 }
