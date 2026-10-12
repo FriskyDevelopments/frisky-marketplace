@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FR!SKY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560&family=Outfit:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100dvh;font-family:Outfit,sans-serif;background:#12110e;color:#f3ecdf}main{min-height:100dvh;display:grid;grid-template-rows:auto 1fr auto;padding:1.25rem;background:linear-gradient(#12110e 46%,#2a2118 58%,#0c0b09)}header{display:flex;justify-content:space-between;align-items:center}time{letter-spacing:.08em;color:#a39886;font-size:.875rem}button,input{font:inherit;color:inherit}.lang,.go,summary{min-height:2.75rem;border-radius:1rem;border:1px solid rgba(243,236,223,.22);background:rgba(18,17,14,.55)}.lang{display:inline-flex;align-items:center;padding:0 .85rem}section.mid{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.75rem}.kicker{margin:0;letter-spacing:.22em;text-transform:uppercase;font-size:.75rem;color:#e2a15a}h1{margin:0;font-family:Fraunces,Georgia,serif;font-weight:560;font-size:clamp(3.5rem,12vw,7rem);line-height:.9}.orb{width:.85rem;height:.85rem;border-radius:99px;background:#e2a15a}.line,.hint{color:#a39886;max-width:22rem;line-height:1.5}p{margin:0}details{width:min(100%,24rem);margin:0 auto}summary{display:grid;place-items:center;cursor:pointer}form{display:grid;gap:.75rem;margin-top:.75rem}label{display:grid;gap:.4rem;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}input{min-height:2.75rem;padding:0 .9rem;border-radius:1rem;border:1px solid #2a261f;background:#12110e;text-transform:none;letter-spacing:0}.hint{font-size:.8rem;text-transform:none;letter-spacing:0}
+</style>
+</head>
+<body>
+<main>
+<header><time id="clock"></time><button class="lang" id="lang" type="button">EN</button></header>
+<section class="mid"><p class="kicker" id="kicker">Open kitchen</p><h1>FR!SKY</h1><div class="orb"></div><p id="status">Waiting on the harness</p><p class="line" id="line">The line is live when the harness answers.</p></section>
+<details><summary id="adv">Advanced</summary><form id="form"><label id="urlLabel">Harness URL <input id="url" placeholder="https://" autocomplete="off" spellcheck="false"/></label><button class="go" id="go" type="submit">Check line</button><p class="hint" id="hint">Stays in this browser. Nothing is sent anywhere else.</p></form></details>
+</main>
+<script>
+const copy={en:{kicker:"Open kitchen",line:"The line is live when the harness answers.",idle:"Waiting on the harness",checking:"Checking the line",live:"Harness answered",down:"Harness did not answer",adv:"Advanced",url:"Harness URL",go:"Check line",hint:"Stays in this browser. Nothing is sent anywhere else."},es:{kicker:"Cocina abierta",line:"La linea esta viva cuando el arnes responde.",idle:"Esperando al arnes",checking:"Revisando la linea",live:"El arnes respondio",down:"El arnes no respondio",adv:"Avanzado",url:"URL del arnes",go:"Revisar linea",hint:"Se queda en este navegador. No se manda a ningun otro lado."}};
+let lang=localStorage.getItem("frisky-rtc-lang")==="es"?"es":"en";
+const url=document.getElementById("url");url.value=localStorage.getItem("frisky-rtc-harness")||"";
+function paint(state){const t=copy[lang];document.documentElement.lang=lang==="es"?"es":"en";document.getElementById("kicker").textContent=t.kicker;document.getElementById("line").textContent=t.line;document.getElementById("status").textContent=t[state];document.getElementById("adv").textContent=t.adv;document.getElementById("go").textContent=t.go;document.getElementById("hint").textContent=t.hint;document.getElementById("lang").textContent=lang==="en"?"EN":"ES";}
+document.getElementById("lang").onclick=()=>{lang=lang==="en"?"es":"en";localStorage.setItem("frisky-rtc-lang",lang);paint("idle");};
+document.getElementById("form").onsubmit=async(e)=>{e.preventDefault();const value=url.value.trim();localStorage.setItem("frisky-rtc-harness",value);if(!value)return paint("idle");paint("checking");try{const res=await fetch(value,{signal:AbortSignal.timeout(8000)});paint(res.ok?"live":"down");}catch{paint("down");}};
+paint("idle");document.getElementById("clock").textContent=new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"});
+</script>
+</body></html>
