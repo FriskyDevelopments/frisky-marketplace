@@ -84,6 +84,13 @@
       "description": "Magic Patterns official MCP — prototype ideas seeded from local UI, generate design directions, port local UI into hosted designs, adapt designs back into production code",
       "category": "PRODUCTIVITY",
       "owner": "friskypup"
+    },
+    {
+      "name": "permission-request",
+      "path": "./permission-request",
+      "description": "Fleet approval gate — agents file a permission request only for actions that cost money or need new access; no form, no command until Frisky approves.",
+      "category": "PRODUCTIVITY",
+      "owner": "friskypup"
     }
   ]
 }
