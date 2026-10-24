@@ -1,0 +1,14 @@
+title = "frisky-marketplace gitleaks config"
+[extend]
+useDefault = true
+
+[[rules]]
+id = "frisky-env-assignment"
+description = "KEY/TOKEN/PASSWORD/SECRET assignment with a literal value"
+regex = '''(?i)\b[A-Z0-9_]*(API_KEY|TOKEN|PASSWORD|PASS|SECRET|WEBHOOK_URL)\b\s*[=:]\s*["']?[A-Za-z0-9_\-\.\/\+=:@]{12,}'''
+keywords = ["api_key","token","password","pass","secret","webhook_url"]
+
+[allowlist]
+description = "Placeholders and 1Password references"
+regexes = ['''op://[^\s"']+''', '''<[A-Z0-9_\-]+>''', '''changeme|placeholder|example''']
+paths = ['''\.env\.example$''', '''\.gitleaks\.toml$''']

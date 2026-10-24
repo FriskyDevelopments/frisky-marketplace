@@ -1,0 +1,23 @@
+# --- Secrets: never commit (values live in 1Password) ---
+.env
+.env.*
+!.env.example
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa*
+id_ed25519*
+*.secret
+*.secrets
+secrets.*
+!secrets.example.*
+credentials*.json
+service-account*.json
+.npmrc
+.netrc
+.op/
+env-dump*
+*.envdump
