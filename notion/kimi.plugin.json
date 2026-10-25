@@ -1,0 +1,36 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "notion",
+  "version": "0.1.0",
+  "description": "Notion's hosted MCP server (https://mcp.notion.com/mcp, Streamable HTTP). Sign in with your Notion account in the browser (OAuth); no integration token or API key is stored by this plugin. Search and read first; writes only with explicit user OK.",
+  "keywords": [
+    "notion",
+    "docs",
+    "wiki",
+    "database",
+    "mcp",
+    "oauth",
+    "no-api-key"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "",
+  "interface": {
+    "displayName": "Notion",
+    "shortDescription": "Notion's hosted MCP — browser OAuth, no API key",
+    "longDescription": "Notion's hosted MCP server (https://mcp.notion.com/mcp, Streamable HTTP). Sign in with your Notion account in the browser (OAuth); no integration token or API key is stored by this plugin. Search and read first; writes only with explicit user OK.",
+    "developerName": "Local developer",
+    "websiteURL": "https://developers.notion.com/docs/mcp",
+    "iconUrl": "",
+    "category": "PRODUCTIVITY"
+  },
+  "skills": "./skills/",
+  "mcpServers": {
+    "notion": {
+      "url": "https://mcp.notion.com/mcp"
+    }
+  },
+  "sessionStart": {
+    "skill": "notion"
+  }
+}
