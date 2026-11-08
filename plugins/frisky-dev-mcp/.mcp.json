@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "frisky": {
+      "type": "http",
+      "url": "https://mcp.friskydev.com/mcp",
+      "headers": { "Authorization": "Bearer ${FRISKY_MCP_TOKEN}" }
+    }
+  }
+}

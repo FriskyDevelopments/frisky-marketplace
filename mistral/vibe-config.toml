@@ -1,0 +1,18 @@
+# Mistral Vibe: agregar a ~/.vibe/config.toml (formato sin verificar contra la doc actual)
+[[mcp_servers]]
+name = "frisky-dev-make"
+transport = "http"
+url = "${MAKE_MCP_URL}"
+headers = { Authorization = "Bearer ${MAKE_MCP_TOKEN}" }
+
+[[mcp_servers]]
+name = "frisky-dev-mcp"
+transport = "http"
+url = "https://mcp.friskydev.com/mcp"
+headers = { Authorization = "Bearer ${FRISKY_MCP_TOKEN}" }
+
+[[mcp_servers]]
+name = "frisky-dev-n8n"
+transport = "http"
+url = "${N8N_MCP_URL}"
+headers = { Authorization = "Bearer ${N8N_MCP_TOKEN}" }

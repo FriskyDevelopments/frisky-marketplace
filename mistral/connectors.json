@@ -1,0 +1,8 @@
+{
+  "note": "Le Chat: Intelligence > Connectors > Add custom MCP connector. Pega URL y header; los tokens van como secretos, no en el repo.",
+  "connectors": [
+    { "name": "frisky-dev-make", "url": "${MAKE_MCP_URL}", "auth_header": "Authorization: Bearer ${MAKE_MCP_TOKEN}" },
+    { "name": "frisky-dev-mcp",  "url": "https://mcp.friskydev.com/mcp", "auth_header": "Authorization: Bearer ${FRISKY_MCP_TOKEN}" },
+    { "name": "frisky-dev-n8n",  "url": "${N8N_MCP_URL}", "auth_header": "Authorization: Bearer ${N8N_MCP_TOKEN}" }
+  ]
+}
