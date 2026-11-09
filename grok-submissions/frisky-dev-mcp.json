@@ -1,0 +1,20 @@
+{
+  "name": "frisky-dev-mcp",
+  "description": "Frisky MCP gateway",
+  "category": "development",
+  "source": {
+    "source": "url",
+    "url": "https://github.com/FriskyDevelopments/frisky-marketplace.git",
+    "sha": "f9509c6ed431cb7407597fde2e42c95049329731",
+    "path": "plugins/frisky-dev-mcp"
+  },
+  "keywords": [
+    "frisky",
+    "mcp",
+    "frisky-dev-mcp"
+  ],
+  "domains": [
+    "mcp.friskydev.com"
+  ],
+  "homepage": "https://github.com/FriskyDevelopments/frisky-marketplace"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "frisky-dev-make",
+  "description": "Make.com scenarios via MCP",
+  "category": "automation",
+  "source": {
+    "source": "url",
+    "url": "https://github.com/FriskyDevelopments/frisky-marketplace.git",
+    "sha": "f9509c6ed431cb7407597fde2e42c95049329731",
+    "path": "plugins/frisky-dev-make"
+  },
+  "keywords": [
+    "frisky",
+    "mcp",
+    "frisky-dev-make"
+  ],
+  "domains": [
+    "us2.make.com"
+  ],
+  "homepage": "https://github.com/FriskyDevelopments/frisky-marketplace"
+}
