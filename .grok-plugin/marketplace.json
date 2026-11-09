@@ -1,0 +1,36 @@
+{
+  "name": "frisky-dev",
+  "description": "Frisky Developments MCP connectors",
+  "owner": {
+    "name": "Frisky Developments LLC"
+  },
+  "plugins": [
+    {
+      "name": "frisky-dev-make",
+      "description": "Make.com scenarios via MCP",
+      "category": "automation",
+      "source": {
+        "type": "local",
+        "path": "./plugins/frisky-dev-make"
+      }
+    },
+    {
+      "name": "frisky-dev-mcp",
+      "description": "Frisky MCP gateway",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "./plugins/frisky-dev-mcp"
+      }
+    },
+    {
+      "name": "frisky-dev-n8n",
+      "description": "n8n workflows via MCP",
+      "category": "automation",
+      "source": {
+        "type": "local",
+        "path": "./plugins/frisky-dev-n8n"
+      }
+    }
+  ]
+}
