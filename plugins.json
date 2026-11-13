@@ -84,6 +84,13 @@
       "description": "Magic Patterns official MCP — prototype ideas seeded from local UI, generate design directions, port local UI into hosted designs, adapt designs back into production code",
       "category": "PRODUCTIVITY",
       "owner": "friskypup"
+    },
+    {
+      "name": "supermemory",
+      "path": "./supermemory",
+      "description": "Supermemory persistent memory layer - semantic recall across sessions, save durable facts, manage spaces and container tags, and keep a curated user profile, through the official hosted Supermemory MCP (OAuth).",
+      "category": "PRODUCTIVITY",
+      "owner": "friskypup"
     }
   ]
 }

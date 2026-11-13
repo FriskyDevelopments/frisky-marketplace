@@ -1,0 +1,32 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "supermemory",
+  "version": "0.1.0",
+  "description": "Persistent memory and knowledge layer - search, save and profile memories through the Supermemory MCP, authorized with OAuth.",
+  "keywords": [
+    "supermemory",
+    "memory",
+    "recall",
+    "knowledge",
+    "profile",
+    "mcp"
+  ],
+  "author": "Local developer",
+  "license": "MIT",
+  "skillInstructions": "",
+  "interface": {
+    "displayName": "Supermemory",
+    "shortDescription": "Search, save and recall memories with Supermemory",
+    "longDescription": "Supermemory is the persistent memory and knowledge layer behind a session. Search it before answering anything that depends on a past decision, a stated preference or project history; save the decisions, preferences and architecture facts worth keeping; and curate spaces, container tags and the user profile. The official hosted Supermemory MCP server (OAuth) exposes semantic search, document storage, the profile layer and the memory graph.",
+    "developerName": "Local developer",
+    "websiteURL": "https://supermemory.ai",
+    "iconUrl": "",
+    "category": "PRODUCTIVITY"
+  },
+  "mcpServers": {
+    "supermemory": {
+      "url": "https://mcp.supermemory.ai/mcp"
+    }
+  },
+  "skills": "./skills/"
+}
