@@ -1,0 +1,9 @@
+{
+  "name": "frisky-dev",
+  "owner": { "name": "Frisky Developments LLC" },
+  "plugins": [
+    { "name": "frisky-dev-make", "source": "./plugins/frisky-dev-make", "description": "Make.com scenarios via MCP" },
+    { "name": "frisky-dev-mcp", "source": "./plugins/frisky-dev-mcp", "description": "Frisky MCP gateway" },
+    { "name": "frisky-dev-n8n", "source": "./plugins/frisky-dev-n8n", "description": "n8n workflows via MCP" }
+  ]
+}

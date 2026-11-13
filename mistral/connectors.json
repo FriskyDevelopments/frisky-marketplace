@@ -1,0 +1,25 @@
+{
+  "note": "Setup worksheet only, not a Le Chat import format. Do not paste ${...} placeholders into the UI. Enter secrets in connector secret fields.",
+  "connectors": [
+    {
+      "name": "frisky-dev-make",
+      "url_env": "MAKE_MCP_URL",
+      "auth": "bearer",
+      "token_env": "MAKE_MCP_TOKEN"
+    },
+    {
+      "name": "frisky-dev-mcp",
+      "url": "https://mcp.friskydev.com/mcp",
+      "auth": "oauth",
+      "scopes": [
+        "frisky.mcp"
+      ]
+    },
+    {
+      "name": "frisky-dev-n8n",
+      "url": "https://frisky.app.n8n.cloud/mcp-server/http",
+      "auth": "bearer",
+      "token_env": "N8N_MCP_TOKEN"
+    }
+  ]
+}

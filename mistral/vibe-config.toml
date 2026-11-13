@@ -1,0 +1,29 @@
+# Template: render with python3 scripts/render-vibe-config.py --output <new-file>.
+# MAKE_MCP_URL comes from the approved vault entry; tokens remain environment variables.
+[[mcp_servers]]
+name = "frisky-dev-make"
+transport = "streamable-http"
+url = "${MAKE_MCP_URL}"
+[mcp_servers.auth]
+type = "static"
+api_key_env = "MAKE_MCP_TOKEN"
+api_key_header = "Authorization"
+api_key_format = "Bearer {token}"
+
+[[mcp_servers]]
+name = "frisky-dev-mcp"
+transport = "streamable-http"
+url = "https://mcp.friskydev.com/mcp"
+[mcp_servers.auth]
+type = "oauth"
+scopes = ["frisky.mcp"]
+
+[[mcp_servers]]
+name = "frisky-dev-n8n"
+transport = "streamable-http"
+url = "https://frisky.app.n8n.cloud/mcp-server/http"
+[mcp_servers.auth]
+type = "static"
+api_key_env = "N8N_MCP_TOKEN"
+api_key_header = "Authorization"
+api_key_format = "Bearer {token}"

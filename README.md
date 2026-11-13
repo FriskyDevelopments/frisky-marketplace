@@ -81,3 +81,8 @@ frisky-marketplace/
 <div align="center">
 <sub>frisky developments · wired for friskypup</sub>
 </div>
+
+
+## Claude, Grok, and Mistral
+
+See [client setup and validation](docs/CLIENT_SETUP.md) for the three Frisky MCP connectors, authentication, and release checks. The Kimi catalog above is preserved.
