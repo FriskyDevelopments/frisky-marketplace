@@ -22,7 +22,7 @@
     "developerName": "Render (official MCP) — plugin packaged locally",
     "websiteURL": "https://render.com",
     "iconUrl": "icon.svg",
-    "category": "DEVTOOLS",
+    "category": "DEVELOPER_TOOLS",
     "hostKind": "hosted",
     "platforms": [
       "macos",

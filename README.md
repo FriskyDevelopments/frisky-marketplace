@@ -2,12 +2,16 @@
 
 ![Frisky Marketplace](./assets/banner.svg)
 
+<!-- BEGIN GENERATED COUNT -->
 ![plugins](https://img.shields.io/badge/plugins-12-00e5ff?style=flat-square)
+<!-- END GENERATED COUNT -->
 ![index](https://img.shields.io/badge/index-plugins.json-ff2ea6?style=flat-square)
 ![app](https://img.shields.io/badge/for-Kimi_app-8fa1b8?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-8fa1b8?style=flat-square)
 
-**twelve connectors · one org tab · zero ceremony**
+<!-- BEGIN GENERATED TAGLINE -->
+**12 connectors · one org tab · zero ceremony**
+<!-- END GENERATED TAGLINE -->
 
 Personal plugin marketplace for the **Kimi** app. Add this repo in the
 Directory's **Organization** tab — the app re-fetches it periodically, so
@@ -19,20 +23,22 @@ Directory's **Organization** tab — the app re-fetches it periodically, so
 
 ## The Roster
 
+<!-- BEGIN GENERATED ROSTER -->
 | # | | Plugin | What it wires into your chats | Category |
 |---|-|--------|-------------------------------|----------|
-| 01 | <img src="./sentry-connector/icon.svg" width="24" alt="sentry"> | [**sentry-connector**](./sentry-connector) | Sentry's official MCP — errors, issues, traces, replays, release health | `DEVELOPER_TOOLS` |
-| 02 | <img src="./composio-connector/icon.svg" width="24" alt="composio"> | [**composio-connector**](./composio-connector) | Composio's hosted tool router — 1000+ apps behind one OAuth | `PRODUCTIVITY` |
-| 03 | <img src="./convex-connector/icon.jpg" width="24" alt="convex"> | [**convex-connector**](./convex-connector) | Convex backend — projects, deployments, data | `DEVELOPER_TOOLS` |
-| 04 | <img src="./friskydev-mcp/icon.png" width="24" alt="friskydev"> | [**friskydev-mcp**](./friskydev-mcp) | FriskyDev gateway — 15 specialist operators + shared memory | `PRODUCTIVITY` |
-| 05 | <img src="./render/icon.svg" width="24" alt="render"> | [**render**](./render) | Render.com — services, deploys, logs, cron jobs | `DEVTOOLS` |
-| 06 | <img src="./framer/icon.svg" width="24" alt="framer"> | [**framer**](./framer) | Framer — pages, CMS collections, publish | `PRODUCTIVITY` |
-| 07 | <img src="./chatprd/icon.png" width="24" alt="chatprd"> | [**chatprd**](./chatprd) | ChatPRD — product docs on demand | `PRODUCTIVITY` |
-| 08 | <img src="./folios/icon.svg" width="24" alt="folios"> | [**folios**](./folios) | Folios — evidence workspaces, playbooks | `PRODUCTIVITY` |
-| 09 | <img src="./cloudflare-connector/icon.svg" width="24" alt="cloudflare"> | [**cloudflare-connector**](./cloudflare-connector) | Cloudflare official MCP — Workers, Pages, KV, D1, R2, DNS, Zero Trust, Analytics | `DEVELOPER_TOOLS` |
-| 10 | <img src="./n8n-connector/icon.png" width="24" alt="n8n"> | [**n8n-connector**](./n8n-connector) | Your self-hosted n8n instance MCP — workflows, executions, data tables | `PRODUCTIVITY` |
-| 11 | <img src="./perplexity/icon.svg" width="24" alt="perplexity"> | [**perplexity**](./perplexity) | Perplexity official MCP — real-time web search, reasoning, conversational AI | `PRODUCTIVITY` |
-| 12 | <img src="./magic-patterns/icon.svg" width="24" alt="magic-patterns"> | [**magic-patterns**](./magic-patterns) | Magic Patterns official MCP — prototype UI, design directions, production code handoff | `PRODUCTIVITY` |
+| 01 | <img src="./chatprd/icon.png" width="24" alt="chatprd"> | [**ChatPRD**](./chatprd) | Push PRDs and FriskyClaw digests into ChatPRD | `PRODUCTIVITY` |
+| 02 | <img src="./composio-connector/icon.svg" width="24" alt="composio-connector"> | [**Composio Connector**](./composio-connector) | 在 Kimi 里使用 Composio Connector | `PRODUCTIVITY` |
+| 03 | <img src="./convex-connector/icon.jpg" width="24" alt="convex-connector"> | [**Convex Connector**](./convex-connector) | 在 Kimi 里直连你的 Convex 项目 | `DEVELOPER_TOOLS` |
+| 04 | <img src="./folios/icon.svg" width="24" alt="folios"> | [**Folios**](./folios) | 在 Kimi 里使用 Folios | `PRODUCTIVITY` |
+| 05 | <img src="./framer/icon.svg" width="24" alt="framer"> | [**Framer**](./framer) | Diseña, edita y publica sitios Framer desde Kimi | `PRODUCTIVITY` |
+| 06 | <img src="./friskydev-mcp/icon.png" width="24" alt="friskydev-mcp"> | [**Frisky Dev MCP**](./friskydev-mcp) | Use Frisky Dev MCP in Kimi — 15 specialist operators with shared memory | `PRODUCTIVITY` |
+| 07 | <img src="./render/icon.svg" width="24" alt="render"> | [**Render**](./render) | 在 Kimi 里管理 Render 云服务 | `DEVELOPER_TOOLS` |
+| 08 | <img src="./sentry-connector/icon.svg" width="24" alt="sentry-connector"> | [**Sentry Connector**](./sentry-connector) | 在 Kimi 里使用 Sentry Connector | `DEVELOPER_TOOLS` |
+| 09 | <img src="./cloudflare-connector/icon.svg" width="24" alt="cloudflare-connector"> | [**Cloudflare Connector**](./cloudflare-connector) | 在 Kimi 里使用 Cloudflare Connector | `DEVELOPER_TOOLS` |
+| 10 | <img src="./n8n-connector/icon.png" width="24" alt="n8n-connector"> | [**n8n Connector**](./n8n-connector) | 在 Kimi 里使用 n8n Connector | `PRODUCTIVITY` |
+| 11 | <img src="./perplexity/icon.svg" width="24" alt="perplexity"> | [**Perplexity**](./perplexity) | Search and reason with Perplexity inside sessions | `PRODUCTIVITY` |
+| 12 | <img src="./magic-patterns/icon.svg" width="24" alt="magic-patterns"> | [**Magic Patterns**](./magic-patterns) | Prototype and iterate UI with Magic Patterns | `PRODUCTIVITY` |
+<!-- END GENERATED ROSTER -->
 
 ## Install
 
@@ -40,6 +46,9 @@ Directory's **Organization** tab — the app re-fetches it periodically, so
 2. Paste this repo's URL:
    `https://github.com/FriskyDevelopments/frisky-marketplace`
 3. Install plugins from the org marketplace as they appear
+
+If the catalog or a plugin does not work, see the
+[install troubleshooting guide](./docs/install-troubleshooting.md).
 
 ## Publish a New Plugin
 
@@ -53,7 +62,9 @@ cp -R ~/path/to/my-plugin ./my-plugin
 # 3. add an icon (used by the README roster + the app)
 #    ./my-plugin/icon.svg  (or icon.png)
 
-# 4. add a row to the Roster above, bump the plugin-count badge,
+# 4. regenerate the roster and count, then run the marketplace checks
+.venv/bin/python -m scripts.generate_roster
+.venv/bin/python -m unittest discover -s tests -v
 #    then push — the app picks it up on its next fetch
 git add -A && git commit -m "add my-plugin" && git push
 ```
@@ -62,26 +73,56 @@ git add -A && git commit -m "add my-plugin" && git push
 (`path`) or external repos (`url`), with optional `description`, `category`,
 and `owner` metadata.
 
-## Verify External Plugin URLs (item 29)
+## Categories and naming
 
-Requires Python 3.10+; no dependencies or credentials are needed.
+- Use `DEVELOPER_TOOLS` for infrastructure, backend, and observability plugins;
+  use `PRODUCTIVITY` for workflow, design, research, and collaboration plugins.
+  Keep the index `category`, manifest `interface.category`, and roster identical.
+- Plugin IDs (`name`) are lowercase kebab-case and must match the folder name
+  and manifest `name`. Existing IDs and paths are stable install identifiers;
+  do not rename them just to add or remove `-connector` or `-mcp` suffixes.
+- Use the manifest `interface.displayName` as the roster label, preserving brand
+  spelling and capitalization (for example, `ChatPRD` and `n8n Connector`).
+  IDs belong in paths and configuration, not user-facing roster labels.
+
+Check these conventions without installing dependencies or contacting MCP servers:
 
 ```bash
-# Offline regression tests
 python3 -B -m unittest discover -s tests -v
-
-# Live, read-only URL check (nonzero exit means at least one failure)
-python3 -B scripts/check_external_urls.py --timeout 15
+git diff --check
 ```
 
-The live check follows redirects and checks external index `url` entries,
-manifest `websiteURL`/`iconUrl` values, and remote `mcpServers.*.url` endpoints.
-Empty values, local icons, and stdio servers are skipped. It uses HEAD, falling
-back to GET on HTTP 405, without reading response bodies or invoking MCP tools.
-Public pages/assets require HTTP 2xx. MCP HTTP 401/403/405/406/415 responses count
-only as reachability evidence, not successful authentication or plugin operation.
-DNS/TLS errors, timeouts, missing URLs, rate limits, and server errors fail;
-a public-site HTTP 403 also fails even if it may be a bot restriction.
+## Marketplace checks
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-test.txt
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python -m scripts.generate_roster --check
+```
+
+Every `kimi.plugin.json`, including unindexed plugins, is validated against the
+checked-in `schemas/plugin-manifest.schema.json`. This is the repository's
+offline contract, not a copy of the upstream Kimi schema. It checks known fields
+while allowing extensions and existing category labels. CI runs the same tests;
+it does not connect to MCP servers or deploy anything.
+
+The roster, count badge, and connector tagline are generated from `plugins.json`
+(in index order), using local manifest short descriptions and icons when present.
+Run `.venv/bin/python -m scripts.generate_roster` after changing the index or those
+manifest fields. Tests reject stale generated content; other README sections stay
+hand-maintained. External `url` entries do not require a checkout.
+
+Skill checks require each declared skills directory to contain skill folders with
+nonempty `SKILL.md` files. Local inline/image and reference-style Markdown links
+must resolve within the plugin; remote links are not fetched. A `sessionStart.skill`
+must match a declared skill folder.
+
+Index compatibility tests cover the native `{ "name": ..., "plugins": [...] }`
+shape, exactly one local `path` or external HTTP(S) `url` per entry, optional
+metadata (including multilingual descriptions and existing category labels),
+unique plugin names/local paths, and matching local manifest names. Unknown
+metadata remains allowed for forward compatibility.
 
 ## Layout
 
