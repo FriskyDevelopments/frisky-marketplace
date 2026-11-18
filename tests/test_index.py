@@ -71,4 +71,4 @@ class IndexCompatibilityTests(unittest.TestCase):
             index = {"name": "fixture", "plugins": [{"name": "demo", "path": "./demo plugin"}]}
             validate_index(index, root)
             text = (ROOT / "README.md").read_text(encoding="utf-8")
-            self.assertIn("[**demo**](./demo%20plugin)", generate_readme(text, index, root))
+            self.assertIn("[**Demo**](./demo%20plugin)", generate_readme(text, index, root))

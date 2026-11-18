@@ -35,13 +35,17 @@ def generate_readme(text, index, root=ROOT):
             directory = local_path(root, entry["path"])
             manifest = read_json(directory / "kimi.plugin.json")
             description = manifest["interface"].get("shortDescription", description)
+            # Roster labels follow the manifest displayName so brand spelling
+            # (ChatPRD, n8n Connector) survives regeneration.
+            label = manifest["interface"].get("displayName", entry["name"])
             icons = sorted(p for p in directory.glob("icon.*") if p.suffix in {".svg", ".png", ".jpg", ".jpeg"})
             if icons:
                 source = "./" + icons[0].relative_to(root).as_posix()
                 icon = f'<img src="{html.escape(source, quote=True)}" width="24" alt="{cell(entry["name"])}">'
         target = quote(entry.get("path", entry.get("url", "")), safe="/:?#@!$&'*+,;=%~")
+        label = entry["name"] if "path" not in entry else label
         rows.append(
-            f'| {number:02d} | {icon} | [**{cell(entry["name"])}**]({target}) | '
+            f'| {number:02d} | {icon} | [**{cell(label)}**]({target}) | '
             f'{cell(description)} | `{cell(entry.get("category", ""))}` |'
         )
     count = len(index["plugins"])
