@@ -1,0 +1,20 @@
+{
+  "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
+  "name": "permission-request",
+  "version": "0.1.0",
+  "description": "Fleet permission-request gate. Agents file a request ONLY for critical work (costs money, or needs access beyond what the agent already has). No form, no command: the command runs only after Frisky marks it Approve.",
+  "keywords": ["approval", "permission", "fleet", "governance", "tally"],
+  "author": "FriskyDevelopments",
+  "license": "MIT",
+  "skillInstructions": "",
+  "interface": {
+    "displayName": "Permission Request",
+    "shortDescription": "Approval gate for critical agent actions",
+    "longDescription": "Defines the rule and the form agents use to ask Frisky for approval before any action that costs money or needs new access. Everything else runs without a form. Source definition lives in form.json and FORM.md; no live Tally form exists yet.",
+    "developerName": "FriskyDevelopments",
+    "websiteURL": "",
+    "iconUrl": "",
+    "category": "PRODUCTIVITY"
+  },
+  "skills": "./skills/"
+}

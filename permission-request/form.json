@@ -1,0 +1,37 @@
+{
+  "id": "permission-request",
+  "version": "0.1.0",
+  "title": "Permission Request",
+  "description": "File ONLY for critical work: an action that costs money or needs access beyond what the agent already has. Everything else is done without a form. No form, no command: the command runs only after Frisky marks it Approve. Vague entries are rejected.",
+  "publish_status": {
+    "tally": "not_published",
+    "note": "No Tally plugin or connector exists right now, so no live Tally form exists. This file is the source definition; publish it to Tally or an equivalent once a credential-free route exists."
+  },
+  "sections": [
+    {
+      "id": "request",
+      "filled_by": "agent",
+      "fields": [
+        {"id": "agent_name", "label": "Agent name", "type": "short_text", "required": true},
+        {"id": "exact_action", "label": "Exact action", "type": "long_text", "required": true, "help": "The exact command or operation, e.g. 'Buy the $49/yr Studio plan', not 'set up billing'."},
+        {"id": "exact_target", "label": "Exact target", "type": "short_text", "required": true, "help": "The specific resource: repo, account, product ID, URL, server, vault item."},
+        {"id": "why_cannot_wait", "label": "Why it can't wait", "type": "long_text", "required": true, "help": "Concrete consequence of delay. No vague reasons."},
+        {"id": "cost", "label": "Cost (money or new access)", "type": "long_text", "required": true, "help": "Amount and currency, and/or the exact new access or credential scope needed."}
+      ]
+    },
+    {
+      "id": "decision",
+      "filled_by": "frisky",
+      "fields": [
+        {"id": "decision", "label": "Frisky decision", "type": "single_choice", "required": true, "options": ["Approve", "Reject"]},
+        {"id": "decision_note", "label": "Note", "type": "long_text", "required": false}
+      ]
+    }
+  ],
+  "rules": {
+    "file_only_when": ["costs_money", "needs_access_beyond_current"],
+    "execute_only_when": "decision == 'Approve'",
+    "reject_if_vague": true,
+    "secrets_in_form": "forbidden"
+  }
+}

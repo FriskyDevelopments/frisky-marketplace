@@ -3,14 +3,14 @@
 ![Frisky Marketplace](./assets/banner.svg)
 
 <!-- BEGIN GENERATED COUNT -->
-![plugins](https://img.shields.io/badge/plugins-12-00e5ff?style=flat-square)
+![plugins](https://img.shields.io/badge/plugins-13-00e5ff?style=flat-square)
 <!-- END GENERATED COUNT -->
 ![index](https://img.shields.io/badge/index-plugins.json-ff2ea6?style=flat-square)
 ![app](https://img.shields.io/badge/for-Kimi_app-8fa1b8?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-8fa1b8?style=flat-square)
 
 <!-- BEGIN GENERATED TAGLINE -->
-**12 connectors · one org tab · zero ceremony**
+**13 connectors · one org tab · zero ceremony**
 <!-- END GENERATED TAGLINE -->
 
 Personal plugin marketplace for the **Kimi** app. Add this repo in the
@@ -38,6 +38,7 @@ Directory's **Organization** tab — the app re-fetches it periodically, so
 | 10 | <img src="./n8n-connector/icon.png" width="24" alt="n8n-connector"> | [**n8n-connector**](./n8n-connector) | 在 Kimi 里使用 n8n Connector | `PRODUCTIVITY` |
 | 11 | <img src="./perplexity/icon.svg" width="24" alt="perplexity"> | [**perplexity**](./perplexity) | Search and reason with Perplexity inside sessions | `PRODUCTIVITY` |
 | 12 | <img src="./magic-patterns/icon.svg" width="24" alt="magic-patterns"> | [**magic-patterns**](./magic-patterns) | Prototype and iterate UI with Magic Patterns | `PRODUCTIVITY` |
+| 13 | <img src="./permission-request/icon.svg" width="24" alt="permission-request"> | [**permission-request**](./permission-request) | Approval gate for critical agent actions | `PRODUCTIVITY` |
 <!-- END GENERATED ROSTER -->
 
 ## Install
