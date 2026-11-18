@@ -1,48 +1,32 @@
 {
   "$schema": "https://catalog.msh.team/misc/kimi.plugin.schema.json",
   "name": "framer",
-  "version": "0.1.0",
-  "description": "Diseña, edita y publica sitios web en Framer desde Kimi: lee páginas y contexto del proyecto, gestiona colecciones CMS, aplica cambios, previsualiza y publica/despliega con el MCP de Framer (framer-mcp-server vía npx).",
+  "version": "0.2.0",
+  "description": "Framer's official hosted MCP server (https://mcp.framer.com/mcp, Streamable HTTP). Sign in with your Framer account in the browser (OAuth); no API key, token or env var is stored by this plugin. Read pages and CMS, propose changes, publish only with explicit user OK.",
   "keywords": [
     "framer",
     "web design",
-    "website",
     "cms",
-    "publish",
-    "deploy",
-    "landing page",
-    "design tool"
+    "mcp",
+    "oauth",
+    "no-api-key"
   ],
   "author": "Local developer",
   "license": "MIT",
   "skillInstructions": "",
   "interface": {
     "displayName": "Framer",
-    "shortDescription": "Diseña, edita y publica sitios Framer desde Kimi",
-    "longDescription": "Diseña, edita y publica sitios web en Framer desde Kimi: lee páginas y contexto del proyecto, gestiona colecciones CMS, aplica cambios, previsualiza y publica/despliega con el MCP de Framer (framer-mcp-server vía npx).",
+    "shortDescription": "Framer's official hosted MCP — browser OAuth, no API key",
+    "longDescription": "Framer's official hosted MCP server (https://mcp.framer.com/mcp, Streamable HTTP). Sign in with your Framer account in the browser (OAuth); no API key, token or env var is stored by this plugin. Read pages and CMS, propose changes, publish only with explicit user OK.",
     "developerName": "Local developer",
-    "websiteURL": "",
+    "websiteURL": "https://www.framer.com/mcp/",
     "iconUrl": "",
-    "category": "PRODUCTIVITY",
-    "hostKind": "local",
-    "platforms": [
-      "macos",
-      "linux",
-      "windows"
-    ]
+    "category": "PRODUCTIVITY"
   },
   "skills": "./skills/",
   "mcpServers": {
     "framer": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "framer-mcp-server"
-      ],
-      "env": {
-        "FRAMER_PROJECT_URL": "",
-        "FRAMER_API_KEY": ""
-      }
+      "url": "https://mcp.framer.com/mcp"
     }
   },
   "sessionStart": {

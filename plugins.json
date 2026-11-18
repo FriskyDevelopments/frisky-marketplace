@@ -32,7 +32,7 @@
     {
       "name": "framer",
       "path": "./framer",
-      "description": "Diseña, edita y publica sitios web en Framer desde Kimi: lee páginas y contexto del proyecto, gestiona colecciones CMS, aplica cambios, previsualiza y publica/despliega con el MCP de Framer (framer-mcp-server vía npx).",
+      "description": "Framer's official hosted MCP server (https://mcp.framer.com/mcp, Streamable HTTP). Sign in with your Framer account in the browser (OAuth); no API key, token or env var is stored by this plugin. Read pages and CMS, propose changes, publish only with explicit user OK.",
       "category": "PRODUCTIVITY",
       "owner": "friskypup"
     },
@@ -82,6 +82,13 @@
       "name": "magic-patterns",
       "path": "./magic-patterns",
       "description": "Magic Patterns official MCP — prototype ideas seeded from local UI, generate design directions, port local UI into hosted designs, adapt designs back into production code",
+      "category": "PRODUCTIVITY",
+      "owner": "friskypup"
+    },
+    {
+      "name": "notion",
+      "path": "./notion",
+      "description": "Notion's hosted MCP server (https://mcp.notion.com/mcp, Streamable HTTP). Sign in with your Notion account in the browser (OAuth); no integration token or API key is stored by this plugin. Search and read first; writes only with explicit user OK.",
       "category": "PRODUCTIVITY",
       "owner": "friskypup"
     }

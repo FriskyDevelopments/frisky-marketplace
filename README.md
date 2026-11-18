@@ -3,14 +3,14 @@
 ![Frisky Marketplace](./assets/banner.svg)
 
 <!-- BEGIN GENERATED COUNT -->
-![plugins](https://img.shields.io/badge/plugins-12-00e5ff?style=flat-square)
+![plugins](https://img.shields.io/badge/plugins-13-00e5ff?style=flat-square)
 <!-- END GENERATED COUNT -->
 ![index](https://img.shields.io/badge/index-plugins.json-ff2ea6?style=flat-square)
 ![app](https://img.shields.io/badge/for-Kimi_app-8fa1b8?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-8fa1b8?style=flat-square)
 
 <!-- BEGIN GENERATED TAGLINE -->
-**12 connectors · one org tab · zero ceremony**
+**13 connectors · one org tab · zero ceremony**
 <!-- END GENERATED TAGLINE -->
 
 Personal plugin marketplace for the **Kimi** app. Add this repo in the
@@ -30,7 +30,7 @@ Directory's **Organization** tab — the app re-fetches it periodically, so
 | 02 | <img src="./composio-connector/icon.svg" width="24" alt="composio-connector"> | [**composio-connector**](./composio-connector) | 在 Kimi 里使用 Composio Connector | `PRODUCTIVITY` |
 | 03 | <img src="./convex-connector/icon.jpg" width="24" alt="convex-connector"> | [**convex-connector**](./convex-connector) | 在 Kimi 里直连你的 Convex 项目 | `DEVELOPER_TOOLS` |
 | 04 | <img src="./folios/icon.svg" width="24" alt="folios"> | [**folios**](./folios) | 在 Kimi 里使用 Folios | `PRODUCTIVITY` |
-| 05 | <img src="./framer/icon.svg" width="24" alt="framer"> | [**framer**](./framer) | Diseña, edita y publica sitios Framer desde Kimi | `PRODUCTIVITY` |
+| 05 | <img src="./framer/icon.svg" width="24" alt="framer"> | [**framer**](./framer) | Framer&#x27;s official hosted MCP — browser OAuth, no API key | `PRODUCTIVITY` |
 | 06 | <img src="./friskydev-mcp/icon.png" width="24" alt="friskydev-mcp"> | [**friskydev-mcp**](./friskydev-mcp) | Use Frisky Dev MCP in Kimi — 15 specialist operators with shared memory | `PRODUCTIVITY` |
 | 07 | <img src="./render/icon.svg" width="24" alt="render"> | [**render**](./render) | 在 Kimi 里管理 Render 云服务 | `DEVTOOLS` |
 | 08 | <img src="./sentry-connector/icon.svg" width="24" alt="sentry-connector"> | [**sentry-connector**](./sentry-connector) | 在 Kimi 里使用 Sentry Connector | `DEVELOPER_TOOLS` |
@@ -38,6 +38,7 @@ Directory's **Organization** tab — the app re-fetches it periodically, so
 | 10 | <img src="./n8n-connector/icon.png" width="24" alt="n8n-connector"> | [**n8n-connector**](./n8n-connector) | 在 Kimi 里使用 n8n Connector | `PRODUCTIVITY` |
 | 11 | <img src="./perplexity/icon.svg" width="24" alt="perplexity"> | [**perplexity**](./perplexity) | Search and reason with Perplexity inside sessions | `PRODUCTIVITY` |
 | 12 | <img src="./magic-patterns/icon.svg" width="24" alt="magic-patterns"> | [**magic-patterns**](./magic-patterns) | Prototype and iterate UI with Magic Patterns | `PRODUCTIVITY` |
+| 13 | <img src="./notion/icon.svg" width="24" alt="notion"> | [**notion**](./notion) | Notion&#x27;s hosted MCP — browser OAuth, no API key | `PRODUCTIVITY` |
 <!-- END GENERATED ROSTER -->
 
 ## Install

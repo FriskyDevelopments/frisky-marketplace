@@ -1,0 +1,11 @@
+# notion — Notion hosted MCP, no API key
+
+Connects Kimi to Notion's own hosted MCP server: `https://mcp.notion.com/mcp` (Streamable HTTP).
+
+**No-key strategy.** Authentication is browser OAuth run by the client. You sign in to Notion and approve; the client keeps the session. This plugin contains no API keys, tokens or secret env vars, and there is nothing to paste.
+
+**Privacy.** The plugin is only a manifest + skill. It stores no credentials and keeps no data; requests go directly from your client to Notion. Revoke access any time from your Notion account settings.
+
+**Safety.** The skill reads first and asks before any write.
+
+Notion is a trademark of its owner; this is an unofficial community plugin and the icon is original.
