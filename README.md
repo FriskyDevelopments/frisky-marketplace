@@ -26,18 +26,18 @@ Directory's **Organization** tab — the app re-fetches it periodically, so
 <!-- BEGIN GENERATED ROSTER -->
 | # | | Plugin | What it wires into your chats | Category |
 |---|-|--------|-------------------------------|----------|
-| 01 | <img src="./chatprd/icon.png" width="24" alt="chatprd"> | [**chatprd**](./chatprd) | Push PRDs and FriskyClaw digests into ChatPRD | `PRODUCTIVITY` |
-| 02 | <img src="./composio-connector/icon.svg" width="24" alt="composio-connector"> | [**composio-connector**](./composio-connector) | 在 Kimi 里使用 Composio Connector | `PRODUCTIVITY` |
-| 03 | <img src="./convex-connector/icon.jpg" width="24" alt="convex-connector"> | [**convex-connector**](./convex-connector) | 在 Kimi 里直连你的 Convex 项目 | `DEVELOPER_TOOLS` |
-| 04 | <img src="./folios/icon.svg" width="24" alt="folios"> | [**folios**](./folios) | 在 Kimi 里使用 Folios | `PRODUCTIVITY` |
-| 05 | <img src="./framer/icon.svg" width="24" alt="framer"> | [**framer**](./framer) | Diseña, edita y publica sitios Framer desde Kimi | `PRODUCTIVITY` |
-| 06 | <img src="./friskydev-mcp/icon.png" width="24" alt="friskydev-mcp"> | [**friskydev-mcp**](./friskydev-mcp) | Use Frisky Dev MCP in Kimi — 15 specialist operators with shared memory | `PRODUCTIVITY` |
-| 07 | <img src="./render/icon.svg" width="24" alt="render"> | [**render**](./render) | 在 Kimi 里管理 Render 云服务 | `DEVTOOLS` |
-| 08 | <img src="./sentry-connector/icon.svg" width="24" alt="sentry-connector"> | [**sentry-connector**](./sentry-connector) | 在 Kimi 里使用 Sentry Connector | `DEVELOPER_TOOLS` |
-| 09 | <img src="./cloudflare-connector/icon.svg" width="24" alt="cloudflare-connector"> | [**cloudflare-connector**](./cloudflare-connector) | 在 Kimi 里使用 Cloudflare Connector | `DEVELOPER_TOOLS` |
-| 10 | <img src="./n8n-connector/icon.png" width="24" alt="n8n-connector"> | [**n8n-connector**](./n8n-connector) | 在 Kimi 里使用 n8n Connector | `PRODUCTIVITY` |
-| 11 | <img src="./perplexity/icon.svg" width="24" alt="perplexity"> | [**perplexity**](./perplexity) | Search and reason with Perplexity inside sessions | `PRODUCTIVITY` |
-| 12 | <img src="./magic-patterns/icon.svg" width="24" alt="magic-patterns"> | [**magic-patterns**](./magic-patterns) | Prototype and iterate UI with Magic Patterns | `PRODUCTIVITY` |
+| 01 | <img src="./chatprd/icon.png" width="24" alt="chatprd"> | [**ChatPRD**](./chatprd) | Push PRDs and FriskyClaw digests into ChatPRD | `PRODUCTIVITY` |
+| 02 | <img src="./composio-connector/icon.svg" width="24" alt="composio-connector"> | [**Composio Connector**](./composio-connector) | 在 Kimi 里使用 Composio Connector | `PRODUCTIVITY` |
+| 03 | <img src="./convex-connector/icon.jpg" width="24" alt="convex-connector"> | [**Convex Connector**](./convex-connector) | 在 Kimi 里直连你的 Convex 项目 | `DEVELOPER_TOOLS` |
+| 04 | <img src="./folios/icon.svg" width="24" alt="folios"> | [**Folios**](./folios) | 在 Kimi 里使用 Folios | `PRODUCTIVITY` |
+| 05 | <img src="./framer/icon.svg" width="24" alt="framer"> | [**Framer**](./framer) | Diseña, edita y publica sitios Framer desde Kimi | `PRODUCTIVITY` |
+| 06 | <img src="./friskydev-mcp/icon.png" width="24" alt="friskydev-mcp"> | [**Frisky Dev MCP**](./friskydev-mcp) | Use Frisky Dev MCP in Kimi — 15 specialist operators with shared memory | `PRODUCTIVITY` |
+| 07 | <img src="./render/icon.svg" width="24" alt="render"> | [**Render**](./render) | 在 Kimi 里管理 Render 云服务 | `DEVELOPER_TOOLS` |
+| 08 | <img src="./sentry-connector/icon.svg" width="24" alt="sentry-connector"> | [**Sentry Connector**](./sentry-connector) | 在 Kimi 里使用 Sentry Connector | `DEVELOPER_TOOLS` |
+| 09 | <img src="./cloudflare-connector/icon.svg" width="24" alt="cloudflare-connector"> | [**Cloudflare Connector**](./cloudflare-connector) | 在 Kimi 里使用 Cloudflare Connector | `DEVELOPER_TOOLS` |
+| 10 | <img src="./n8n-connector/icon.png" width="24" alt="n8n-connector"> | [**n8n Connector**](./n8n-connector) | 在 Kimi 里使用 n8n Connector | `PRODUCTIVITY` |
+| 11 | <img src="./perplexity/icon.svg" width="24" alt="perplexity"> | [**Perplexity**](./perplexity) | Search and reason with Perplexity inside sessions | `PRODUCTIVITY` |
+| 12 | <img src="./magic-patterns/icon.svg" width="24" alt="magic-patterns"> | [**Magic Patterns**](./magic-patterns) | Prototype and iterate UI with Magic Patterns | `PRODUCTIVITY` |
 <!-- END GENERATED ROSTER -->
 
 ## Install
@@ -72,6 +72,25 @@ git add -A && git commit -m "add my-plugin" && git push
 `plugins.json` is the native Kimi index — entries point at in-repo folders
 (`path`) or external repos (`url`), with optional `description`, `category`,
 and `owner` metadata.
+
+## Categories and naming
+
+- Use `DEVELOPER_TOOLS` for infrastructure, backend, and observability plugins;
+  use `PRODUCTIVITY` for workflow, design, research, and collaboration plugins.
+  Keep the index `category`, manifest `interface.category`, and roster identical.
+- Plugin IDs (`name`) are lowercase kebab-case and must match the folder name
+  and manifest `name`. Existing IDs and paths are stable install identifiers;
+  do not rename them just to add or remove `-connector` or `-mcp` suffixes.
+- Use the manifest `interface.displayName` as the roster label, preserving brand
+  spelling and capitalization (for example, `ChatPRD` and `n8n Connector`).
+  IDs belong in paths and configuration, not user-facing roster labels.
+
+Check these conventions without installing dependencies or contacting MCP servers:
+
+```bash
+python3 -B -m unittest discover -s tests -v
+git diff --check
+```
 
 ## Marketplace checks
 
