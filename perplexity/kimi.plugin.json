@@ -13,7 +13,7 @@
   ],
   "author": "Local developer",
   "license": "MIT",
-  "skillInstructions": "",
+  "skillInstructions": "OAuth for this connector approves only perplexity_api. Do not approve offline_access.",
   "interface": {
     "displayName": "Perplexity",
     "shortDescription": "Search and reason with Perplexity inside sessions",

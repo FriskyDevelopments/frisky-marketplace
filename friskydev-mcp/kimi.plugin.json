@@ -13,7 +13,7 @@
   ],
   "author": "Local developer",
   "license": "MIT",
-  "skillInstructions": "",
+  "skillInstructions": "OAuth for this connector approves only frisky.mcp. Do not approve any other scope.",
   "interface": {
     "displayName": "Frisky Dev MCP",
     "shortDescription": "Use Frisky Dev MCP in Kimi — 15 specialist operators with shared memory",

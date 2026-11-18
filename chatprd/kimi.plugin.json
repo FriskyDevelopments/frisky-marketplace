@@ -13,7 +13,7 @@
   ],
   "author": "Local developer",
   "license": "MIT",
-  "skillInstructions": "",
+  "skillInstructions": "OAuth for this connector approves only email and profile. Do not approve private_metadata, public_metadata, offline_access, or user:org:read.",
   "interface": {
     "displayName": "ChatPRD",
     "shortDescription": "Push PRDs and FriskyClaw digests into ChatPRD",
