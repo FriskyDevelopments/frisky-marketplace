@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Frisky native Kimi marketplace index contract",
+  "type": "object",
+  "required": ["name", "plugins"],
+  "properties": {
+    "name": {"type": "string", "minLength": 1},
+    "plugins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "oneOf": [{"required": ["path"]}, {"required": ["url"]}],
+        "properties": {
+          "name": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "path": {"type": "string", "minLength": 1},
+          "url": {"type": "string", "format": "uri", "pattern": "^https?://"},
+          "description": {"type": "string"},
+          "category": {"type": "string"},
+          "owner": {"type": "string"}
+        }
+      }
+    }
+  }
+}
