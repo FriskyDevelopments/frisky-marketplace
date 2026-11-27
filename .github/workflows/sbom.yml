@@ -1,0 +1,40 @@
+name: sbom
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  sbom:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate SBOM from plugin roster
+        run: |
+          python - <<'PY'
+          import json, datetime, pathlib
+          plugins = json.loads(pathlib.Path('plugins.json').read_text())
+          names = [p.get('name') for p in plugins.get('plugins', [])]
+          sbom = {
+            "bomFormat": "CycloneDX",
+            "specVersion": "1.5",
+            "version": 1,
+            "metadata": {
+              "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              "component": {"type": "application", "name": plugins.get("name", "frisky")},
+            },
+            "components": [{"type": "library", "name": n} for n in names if n],
+          }
+          pathlib.Path('sbom.cdx.json').write_text(json.dumps(sbom, indent=2))
+          print(f'wrote sbom.cdx.json with {len(names)} components')
+          PY
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: sbom.cdx.json
