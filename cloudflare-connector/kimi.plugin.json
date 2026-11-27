@@ -16,7 +16,7 @@
   ],
   "author": "Local developer",
   "license": "MIT",
-  "skillInstructions": "当用户提到 Cloudflare 任何产品（Workers、Pages、KV、D1、R2、DNS 记录、CDN、Zero Trust、隧道、Analytics、Stream 等）的管理或排查时使用本插件。首次使用会跳转 Cloudflare OAuth 授权页，用 Cloudflare 账号登录并选择允许的账户即可。",
+  "skillInstructions": "当用户提到 Cloudflare 任何产品（Workers、Pages、KV、D1、R2、DNS 记录、CDN、Zero Trust、隧道、Analytics、Stream 等）的管理或排查时使用本插件。首次使用会跳转 Cloudflare OAuth 授权页，用 Cloudflare 账号登录并选择允许的账户即可。OAuth 只批准 user:read 和 account:read，不要批准授权服务器目录里的 write 或 admin scope（例如 workers-scripts.write、dns.write）。",
   "interface": {
     "displayName": "Cloudflare Connector",
     "shortDescription": "在 Kimi 里使用 Cloudflare Connector",

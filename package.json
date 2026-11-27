@@ -1,0 +1,9 @@
+{
+  "name": "frisky-marketplace",
+  "private": true,
+  "description": "Personal plugin marketplace for the Kimi app",
+  "scripts": {
+    "test": "node --test",
+    "audit:oauth-scopes": "node scripts/audit-oauth-scopes.mjs --live"
+  }
+}

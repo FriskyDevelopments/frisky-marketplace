@@ -12,7 +12,7 @@
   ],
   "author": "Local developer",
   "license": "MIT",
-  "skillInstructions": "当用户提到 Sentry、错误监控、线上报错、issue 排查、异常追踪、release 质量、trace 分析时使用本插件调用 Sentry 工具取数。",
+  "skillInstructions": "当用户提到 Sentry、错误监控、线上报错、issue 排查、异常追踪、release 质量、trace 分析时使用本插件调用 Sentry 工具取数。OAuth 只批准 org:read，不要批准 project:write、team:write、event:write 或 alerts:write。",
   "interface": {
     "displayName": "Sentry Connector",
     "shortDescription": "在 Kimi 里使用 Sentry Connector",
